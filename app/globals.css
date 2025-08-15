@@ -10,6 +10,18 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  /* Colors */
+  --color-gold-400: #FDE68A;
+  --color-gold-600: #F59E0B;
+  --color-silver-300: #E5E7EB;
+  --color-silver-500: #9CA3AF;
+  --color-bronze-300: #FBC19D;
+  --color-bronze-700: #B45309;
+
+  /* Shadows */
+  --shadow-rank-gold: 0 6px 18px -4px rgba(245, 158, 11, 0.45);
+  --shadow-rank-silver: 0 6px 18px -4px rgba(156, 163, 175, 0.45);
+  --shadow-rank-bronze: 0 6px 18px -4px rgba(180, 83, 9, 0.45);
 }
 
 @media (prefers-color-scheme: dark) {

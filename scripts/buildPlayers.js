@@ -14,6 +14,7 @@ async function buildPlayers() {
   );
 
   const full = [];
+  full.push({timeCreated: new Date()})
   for (const { gameName, tagLine } of roster) {
     try {
       const puuid   = await getPUUIDFromRiotID(gameName, tagLine); // 1 request

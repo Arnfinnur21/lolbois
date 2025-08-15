@@ -1,19 +1,23 @@
 [
   {
+    "timeCreated": "2025-08-15T16:06:21.738Z"
+  },
+  {
     "name": "Nubblys",
     "puuid": "culHECFxIU7coEX7YOfi54wDizyMMbAQz-9l3uUp-FjITZkYBXCeanDbnPhaIXNfue6m_GDxxlmAjA",
     "summonerLevel": 523,
     "profileIconUrl": "https://ddragon.leagueoflegends.com/cdn/14.14.1/img/profileicon/592.png",
-    "kills": 73,
-    "deaths": 58,
-    "assists": 56,
-    "dmgDealt": 254761,
-    "dmgTaken": 234350,
-    "vision": 122,
-    "pings": 48,
-    "ccTime": 1625,
-    "timeSpentDead": 1812,
-    "dmgPerKill": 3490
+    "kills": 68,
+    "deaths": 70,
+    "assists": 59,
+    "dmgDealt": 261717,
+    "dmgTaken": 255112,
+    "vision": 123,
+    "pings": 50,
+    "ccTime": 193,
+    "timeSpentDead": 2119,
+    "dmgPerKill": 3849,
+    "kda": 0
   },
   {
     "name": "Agusto",
@@ -27,9 +31,10 @@
     "dmgTaken": 229232,
     "vision": 244,
     "pings": 46,
-    "ccTime": 2555,
+    "ccTime": 322,
     "timeSpentDead": 1372,
-    "dmgPerKill": 4291
+    "dmgPerKill": 4291,
+    "kda": 0
   },
   {
     "name": "Smoochy",
@@ -43,25 +48,27 @@
     "dmgTaken": 301549,
     "vision": 39,
     "pings": 30,
-    "ccTime": 763,
+    "ccTime": 92,
     "timeSpentDead": 3273,
-    "dmgPerKill": 2251
+    "dmgPerKill": 2251,
+    "kda": 0
   },
   {
     "name": "Vago",
     "puuid": "vITN12O8nofcB5CDbgqkD3RrXVgKm5UcztxNprDlwWt5TEnvz0lEp1ZrzNJJ6rltDDvkqQZSknGhIQ",
-    "summonerLevel": 190,
+    "summonerLevel": 191,
     "profileIconUrl": "https://ddragon.leagueoflegends.com/cdn/14.14.1/img/profileicon/6027.png",
-    "kills": 59,
-    "deaths": 104,
-    "assists": 100,
-    "dmgDealt": 198245,
-    "dmgTaken": 292503,
-    "vision": 76,
-    "pings": 23,
-    "ccTime": 1141,
-    "timeSpentDead": 2894,
-    "dmgPerKill": 3360
+    "kills": 55,
+    "deaths": 105,
+    "assists": 91,
+    "dmgDealt": 188495,
+    "dmgTaken": 294687,
+    "vision": 67,
+    "pings": 26,
+    "ccTime": 105,
+    "timeSpentDead": 2859,
+    "dmgPerKill": 3427,
+    "kda": 0
   },
   {
     "name": "Uncle",
@@ -75,9 +82,10 @@
     "dmgTaken": 332905,
     "vision": 72,
     "pings": 31,
-    "ccTime": 3652,
+    "ccTime": 226,
     "timeSpentDead": 2717,
-    "dmgPerKill": 3431
+    "dmgPerKill": 3431,
+    "kda": 0
   },
   {
     "name": "Fats",
@@ -91,9 +99,10 @@
     "dmgTaken": 328855,
     "vision": 128,
     "pings": 70,
-    "ccTime": 2742,
+    "ccTime": 328,
     "timeSpentDead": 2360,
-    "dmgPerKill": 3925
+    "dmgPerKill": 3925,
+    "kda": 0
   },
   {
     "name": "Equinix",
@@ -107,9 +116,10 @@
     "dmgTaken": 274427,
     "vision": 147,
     "pings": 99,
-    "ccTime": 2525,
+    "ccTime": 211,
     "timeSpentDead": 1909,
-    "dmgPerKill": 2847
+    "dmgPerKill": 2847,
+    "kda": 0
   },
   {
     "name": "The Hooker",
@@ -123,8 +133,9 @@
     "dmgTaken": 313696,
     "vision": 148,
     "pings": 50,
-    "ccTime": 1646,
+    "ccTime": 165,
     "timeSpentDead": 1553,
-    "dmgPerKill": 2774
+    "dmgPerKill": 2774,
+    "kda": 0
   }
 ]
