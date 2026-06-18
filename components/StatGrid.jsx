@@ -18,7 +18,7 @@ export default function StatGrid({ items, valueKey }) {
 						transition={{
 							duration: 0.8,
 							ease: "easeOut",
-							delay: i * 0.1, // 0.1s later for each card
+							delay: i * 0.1,
 						}}
 						style={{ display: "inline-block" }}
 					>
