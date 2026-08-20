@@ -39,11 +39,11 @@ export default function StatCard({
 			<div
 				className={`rounded-2xl bg-gray-900/90 ${ring} flex flex-col items-center ${sizeClasses}`}
 			>
-				{/* <div
+				<div
 					className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs mb-1 ${labelBadge}`}
 				>
 					{idx === 0 ? "🥇" : idx === 1 ? "🥈" : idx === 2 ? "🥉" : "—"}
-				</div> */}
+				</div>
 				<img src={iconUrl} alt={name} className="w-12 h-12 rounded-full mb-2" />
 				<div className="font-bold text-center">{name}</div>
 				<div className="text-yellow-400 font-extrabold text-center">
