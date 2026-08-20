@@ -40,5 +40,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Dynamic data files
-/data
+# Dynamic/debug data files (players.json and players.full.json ARE needed
+# at build time - lib/categories.js imports players.full.json directly)
+/data/entire.json
+/data/stats.json
+/data/players.withPuuids.json
+/data/inspect-*.json
+/recent-match.json

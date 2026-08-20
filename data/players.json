@@ -1,10 +1,10 @@
 [
-  { "gameName": "Nubblys", "tagLine": "EUNE" },
-  { "gameName": "Agusto", "tagLine": "ISL" },
-  { "gameName": "Smoochy", "tagLine": "1280" },
-  { "gameName": "Vago", "tagLine": "225" },
-  { "gameName": "Uncle", "tagLine": "5472" },
-  { "gameName": "Fats", "tagLine": "EUNE" },
-  { "gameName": "Equinix", "tagLine": "EUNE" },
-  { "gameName": "The Hooker", "tagLine": "EUNE" }
+	{ "gameName": "Nubblys", "tagLine": "EUNE" },
+	{ "gameName": "Agusto", "tagLine": "ISL" },
+	{ "gameName": "Smoochy", "tagLine": "1280" },
+	{ "gameName": "Vago", "tagLine": "225" },
+	{ "gameName": "Uncle", "tagLine": "5472" },
+	{ "gameName": "Fats", "tagLine": "EUNE" },
+	{ "gameName": "The Hooker", "tagLine": "EUNE" },
+	{ "gameName": "Equinix", "tagLine": "EUNE" }
 ]

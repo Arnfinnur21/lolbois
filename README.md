@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# lolbois-stats
+
+A Next.js stat-tracking site for a group of League of Legends players. It pulls match data from the Riot Games API, crunches it into leaderboard categories, and renders them as ranked stat cards.
+
+![lolbois-stats screenshot](public/LOLBOIS_README.png)
+
+## Categories
+
+Players are ranked (top 3 medaled, rest listed) across categories such as:
+
+- **Killers** — most kills
+- **Biggest Inters** — most deaths
+- **Killstealers** — kill participation shenanigans
+- **Vision Andies** — vision score
+- **Mental Warfare** — chat/pings stats
+- **Grey Screen Enjoyers** — most deaths without a kill/assist
+- **Fav Item** — most purchased item
+
+Category definitions live in [`lib/categories.js`](lib/categories.js) and [`lib/utils.js`](lib/utils.js).
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Environment variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env` with:
 
-## Learn More
+```
+RIOT_API_KEY=your-riot-api-key
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Data pipeline
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The site reads from static JSON in `data/`, generated ahead of time rather than fetched live:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run gen-players       # fetches player match data from Riot -> data/players.full.json
+npm run gen-recent-match  # fetches a single recent match, for debugging
+```
 
-## Deploy on Vercel
+`data/players.json` is the input roster; `scripts/buildPlayers.js` enriches it via the Riot API into `data/players.full.json`, which the app imports directly at build time.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Tech stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Next.js](https://nextjs.org) (App Router, Turbopack)
+- [Tailwind CSS](https://tailwindcss.com) v4
+- [MUI](https://mui.com) / Emotion
+- [Framer Motion](https://www.framer.com/motion/)
