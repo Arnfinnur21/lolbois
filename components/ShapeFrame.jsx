@@ -79,7 +79,7 @@ const SHAPES = {
 	},
 	drops: {
 		// One big drop filling the frame, two small ones up either side at different heights
-		path: `${dropPath(5, 4, 0.9)} ${dropPath(1, 20, 0.16)} ${dropPath(83, 32, 0.16)}`,
+		path: `${dropPath(5, 4, 0.9)} ${dropPath(6, 18, 0.3)} ${dropPath(64, 28, 0.3)}`,
 		artInset: "4%",
 		from: { rotate: 0, scale: 0.85 },
 	},
