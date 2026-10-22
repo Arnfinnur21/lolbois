@@ -206,12 +206,14 @@ async function resolvePortraits(players, ddragon) {
 			continue;
 		}
 		const skins = await championSkins(ddragon.version, champ.id);
-		const nums = (entry.skins?.length ? entry.skins : ["default"]).flatMap((wanted) => {
-			const skin = skins.find((s) => s.name.toLowerCase() === String(wanted).toLowerCase());
-			if (!skin) console.warn(`⚠️  portraits.json: ${champ.name} has no skin "${wanted}" (${player.name})`);
-			return skin ? [skin.num] : [];
+		// A skin is a name, or { name, zoom, focus: [x%, y%] of the splash } to frame it closer
+		const picked = (entry.skins?.length ? entry.skins : ["default"]).flatMap((wanted) => {
+			const { name, zoom, focus } = typeof wanted === "string" ? { name: wanted } : wanted;
+			const skin = skins.find((s) => s.name.toLowerCase() === String(name).toLowerCase());
+			if (!skin) console.warn(`⚠️  portraits.json: ${champ.name} has no skin "${name}" (${player.name})`);
+			return skin ? [{ num: skin.num, ...(zoom && { zoom }), ...(focus && { focus }) }] : [];
 		});
-		out[player.puuid] = { id: champ.id, name: champ.name, skins: nums.length ? nums : [0] };
+		out[player.puuid] = { id: champ.id, name: champ.name, skins: picked.length ? picked : [{ num: 0 }] };
 	}
 	return out;
 }

@@ -1,9 +1,13 @@
 {
-	"_howTo": "Each player's portrait: the champion shown wherever their main would be, and the skins it fades between. Use the skin names from the League client (or \"default\"). Players not listed show their most played champion's default skin. Run npm run gen-data after editing.",
+	"_howTo": "Each player's portrait: the champion shown wherever their main would be, and the skins it fades between. Use the skin names from the League client (or \"default\"). Players not listed show their most played champion's default skin. Run npm run gen-data -- --offline after editing.",
+	"_framing": "A skin can also be { \"name\": ..., \"zoom\": 1.7, \"focus\": [x, y] } to zoom in. focus is the point to zoom toward, in % across and down the splash at ddragon.leagueoflegends.com/cdn/img/champion/centered/<Champion>_<skin number>.jpg",
 	"Fats": { "champion": "Naafiri", "skins": ["Glizzy Naafiri", "Warhound Naafiri"] },
 	"Smoochy": { "champion": "Aphelios", "skins": ["Nightbringer Aphelios", "default"] },
 	"Vago": { "champion": "Syndra", "skins": ["Spirit Blossom Syndra"] },
-	"Nubblys": { "champion": "Gangplank", "skins": ["Pool Party Gangplank", "Sailor Gangplank"] },
+	"Nubblys": {
+		"champion": "Gangplank",
+		"skins": ["Pool Party Gangplank", { "name": "Sailor Gangplank", "zoom": 1.7, "focus": [50, 25] }]
+	},
 	"Uncle": { "champion": "Volibear", "skins": ["Captain Volibear", "Spirit Blossom Springs Volibear"] },
 	"The Hooker": { "champion": "Thresh", "skins": ["Janitor Thresh", "High Noon Thresh"] },
 	"Agusto": { "champion": "Caitlyn", "skins": ["Pulsefire Caitlyn", "Snow Moon Caitlyn"] },

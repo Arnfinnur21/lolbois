@@ -1,5 +1,5 @@
 {
-	"generatedAt": "2026-10-22T19:44:39.406Z",
+	"generatedAt": "2026-10-22T19:48:42.112Z",
 	"ddragonVersion": "16.21.1",
 	"players": [
 		{
@@ -12,8 +12,17 @@
 				"id": "Gangplank",
 				"name": "Gangplank",
 				"skins": [
-					14,
-					3
+					{
+						"num": 14
+					},
+					{
+						"num": 3,
+						"zoom": 1.7,
+						"focus": [
+							50,
+							25
+						]
+					}
 				]
 			}
 		},
@@ -27,8 +36,12 @@
 				"id": "Caitlyn",
 				"name": "Caitlyn",
 				"skins": [
-					11,
-					30
+					{
+						"num": 11
+					},
+					{
+						"num": 30
+					}
 				]
 			}
 		},
@@ -42,8 +55,12 @@
 				"id": "Aphelios",
 				"name": "Aphelios",
 				"skins": [
-					1,
-					0
+					{
+						"num": 1
+					},
+					{
+						"num": 0
+					}
 				]
 			}
 		},
@@ -57,7 +74,9 @@
 				"id": "Syndra",
 				"name": "Syndra",
 				"skins": [
-					44
+					{
+						"num": 44
+					}
 				]
 			}
 		},
@@ -71,8 +90,12 @@
 				"id": "Volibear",
 				"name": "Volibear",
 				"skins": [
-					4,
-					29
+					{
+						"num": 4
+					},
+					{
+						"num": 29
+					}
 				]
 			}
 		},
@@ -86,8 +109,12 @@
 				"id": "Naafiri",
 				"name": "Naafiri",
 				"skins": [
-					20,
-					29
+					{
+						"num": 20
+					},
+					{
+						"num": 29
+					}
 				]
 			}
 		},
@@ -101,8 +128,12 @@
 				"id": "Thresh",
 				"name": "Thresh",
 				"skins": [
-					59,
-					6
+					{
+						"num": 59
+					},
+					{
+						"num": 6
+					}
 				]
 			}
 		},
@@ -116,8 +147,12 @@
 				"id": "Nocturne",
 				"name": "Nocturne",
 				"skins": [
-					4,
-					5
+					{
+						"num": 4
+					},
+					{
+						"num": 5
+					}
 				]
 			}
 		}

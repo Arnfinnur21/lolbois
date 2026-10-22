@@ -145,6 +145,18 @@ const SHAPES = {
 // How long each skin shows before fading to the other
 const SKIN_SWAP_SECONDS = 7;
 
+// Zooms a splash toward `focus` ([x%, y%] of the full 1280×720 centred splash), pulling
+// that point toward the middle of the square frame. The pull is capped so the zoomed
+// art always covers the frame.
+function cropStyle({ zoom = 1, focus }) {
+	if (zoom === 1 && !focus) return undefined;
+	// The frame shows the middle 720×720 of the splash
+	const [fx, fy] = focus ? [(focus[0] * 12.8 - 280) / 7.2, focus[1]] : [50, 50];
+	const limit = 50 - 50 / zoom;
+	const clamp = (v) => Math.max(-limit, Math.min(limit, v));
+	return { transform: `scale(${zoom}) translate(${clamp(50 - fx).toFixed(2)}%, ${clamp(50 - fy).toFixed(2)}%)` };
+}
+
 // Coin piles in the 0–100 frame box: [centre x, bottom coin's top y, coins, half-width]
 const COIN_PILES = [
 	[50, 92, 5, 12],
@@ -245,19 +257,21 @@ export default function ShapeFrame({
 				{[src]
 					.flat()
 					.filter(Boolean)
+					.map((art) => (typeof art === "string" ? { url: art } : art))
 					.slice(0, 2)
-					.map((url, i, all) => (
+					.map((art, i, all) => (
 						<img
-							key={url}
-							src={url}
+							key={art.url}
+							src={art.url}
 							alt={i ? "" : alt}
 							className="absolute inset-0 h-full w-full object-cover"
 							loading="lazy"
-							style={
-								all.length > 1
-									? { animation: `portrait-swap ${SKIN_SWAP_SECONDS * 2}s ease-in-out ${-i * SKIN_SWAP_SECONDS}s infinite` }
-									: undefined
-							}
+							style={{
+								...cropStyle(art),
+								...(all.length > 1 && {
+									animation: `portrait-swap ${SKIN_SWAP_SECONDS * 2}s ease-in-out ${-i * SKIN_SWAP_SECONDS}s infinite`,
+								}),
+							}}
 						/>
 					))}
 				<div className="absolute inset-0 bg-gradient-to-t from-abyss/60 via-transparent to-transparent" />

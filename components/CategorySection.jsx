@@ -46,7 +46,7 @@ export const sectionId = (key) => `cat-${key}`;
 export default function CategorySection({ site, category, number, index }) {
 	const { view, setView, descriptor, ranked } = useCategoryView(category);
 	const [leader, ...rest] = ranked;
-	const backdrop = portraitArt(leader.player, leader.stat).srcs[0];
+	const backdrop = portraitArt(leader.player, leader.stat).srcs[0]?.url;
 	const reverse = index % 2 === 1;
 	const shape = category.descriptor.shape ?? (reverse ? "circle" : "diamond");
 
