@@ -17,6 +17,14 @@ const displaySerif = Merriweather({
 export const metadata = {
 	title: "LOLBOIS",
 	description: "Season leaderboards for the lolbois: who carries, who ints, who pings.",
+	// Made from public/favicon.png by npm run gen-icons; the browser picks by colour scheme
+	icons: {
+		icon: [
+			{ url: "/icon-light.png", type: "image/png", media: "(prefers-color-scheme: light)" },
+			{ url: "/icon-dark.png", type: "image/png", media: "(prefers-color-scheme: dark)" },
+		],
+		apple: "/icon-light.png",
+	},
 };
 
 export default function RootLayout({ children }) {
