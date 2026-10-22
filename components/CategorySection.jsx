@@ -52,7 +52,7 @@ export default function CategorySection({ site, category, number, index }) {
 	return (
 		<section
 			id={sectionId(category.descriptor.key)}
-			className="relative isolate scroll-mt-14 overflow-hidden border-t border-gold/10 py-20 md:py-28"
+			className="relative isolate scroll-mt-28 overflow-hidden border-t border-gold/10 py-20 md:py-28"
 		>
 			{champ?.id && (
 				<img

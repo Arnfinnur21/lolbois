@@ -75,7 +75,7 @@ export default function PingSection({ site, mode }) {
 	if (!entries.length) return null;
 
 	return (
-		<section id="pings" className="scroll-mt-14 border-t border-gold/10 py-20 md:py-28">
+		<section id="pings" className="scroll-mt-28 border-t border-gold/10 py-20 md:py-28">
 			<div className="mx-auto max-w-6xl px-6">
 				<div className="text-center">
 					<p className="eyebrow text-gold-pale">Most pings this season</p>

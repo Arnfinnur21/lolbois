@@ -7,7 +7,7 @@ export default function PlayerRoster({ site, mode }) {
 	const players = [...site.players].sort((a, b) => (stats[b.puuid]?.games ?? 0) - (stats[a.puuid]?.games ?? 0));
 
 	return (
-		<section id="squad" className="scroll-mt-14 border-t border-gold/10 py-20 md:py-28">
+		<section id="squad" className="scroll-mt-28 border-t border-gold/10 py-20 md:py-28">
 			<div className="mx-auto max-w-6xl px-6">
 				<div className="text-center">
 					<p className="eyebrow text-gold-pale">Meet the</p>

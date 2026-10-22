@@ -12,7 +12,7 @@ function PairHalf({ site, category, number, shape, delay }) {
 	return (
 		<motion.div
 			id={sectionId(category.descriptor.key)}
-			className="scroll-mt-20"
+			className="scroll-mt-32"
 			initial={{ opacity: 0, y: 30 }}
 			whileInView={{ opacity: 1, y: 0 }}
 			viewport={{ once: true, amount: 0.15 }}

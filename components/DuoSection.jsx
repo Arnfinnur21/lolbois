@@ -64,7 +64,7 @@ export default function DuoSection({ site, mode }) {
 	const cursed = duos.slice(Math.max(LIMIT, duos.length - LIMIT)).reverse();
 
 	return (
-		<section id="duos" className="scroll-mt-14 border-t border-gold/10 py-20 md:py-28">
+		<section id="duos" className="scroll-mt-28 border-t border-gold/10 py-20 md:py-28">
 			<div className="mx-auto max-w-6xl px-6">
 				<div className="text-center">
 					<p className="eyebrow text-gold-pale">Better together?</p>
