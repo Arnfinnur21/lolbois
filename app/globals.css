@@ -52,8 +52,80 @@ body {
 }
 }
 
+/* Shape effects (components/ShapeEffect.jsx). Each layer is a size container,
+   so particles travel in cqw/cqh: the same distance relative to any frame size. */
+.fx-layer {
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	container-type: size;
+}
+
+.fx-p {
+	position: absolute;
+	opacity: 0;
+	will-change: transform, opacity;
+}
+
+@keyframes fx-rise {
+	0% { transform: translate(0, 0) scale(1); opacity: 0; }
+	12% { opacity: var(--o, 0.9); }
+	100% { transform: translate(var(--dx, 0), calc(var(--rise, 60cqh) * -1)) scale(0.4); opacity: 0; }
+}
+
+@keyframes fx-smoke {
+	0% { transform: translate(0, 0) scale(0.6); opacity: 0; }
+	30% { opacity: var(--o, 0.4); }
+	100% { transform: translate(var(--dx, 0), -45cqh) scale(1.5); opacity: 0; }
+}
+
+@keyframes fx-twinkle {
+	0%, 100% { transform: scale(0) rotate(0deg); opacity: 0; }
+	50% { transform: scale(1) rotate(45deg); opacity: var(--o, 1); }
+}
+
+@keyframes fx-fall {
+	0% { transform: translate(0, 0); opacity: 0; }
+	10% { opacity: var(--o, 0.9); }
+	100% { transform: translate(var(--dx, 0), 110cqh); opacity: 0; }
+}
+
+@keyframes fx-fall-spin {
+	0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+	10% { opacity: var(--o, 0.9); }
+	100% { transform: translate(var(--dx, 0), 110cqh) rotate(var(--spin, 540deg)); opacity: 0; }
+}
+
+@keyframes fx-flutter {
+	0% { transform: translate(0, 0) rotate(-20deg); opacity: 0; }
+	15% { opacity: var(--o, 0.9); }
+	50% { transform: translate(var(--dx, 0), 50cqh) rotate(25deg); }
+	100% { transform: translate(calc(var(--dx, 0) * -0.5), 108cqh) rotate(-15deg); opacity: 0; }
+}
+
+@keyframes fx-streak {
+	0% { transform: translateX(110cqw); opacity: 0; }
+	20% { opacity: var(--o, 0.8); }
+	100% { transform: translateX(-40cqw); opacity: 0; }
+}
+
+@keyframes fx-ring {
+	0% { transform: scale(0.55); opacity: 0.8; }
+	100% { transform: scale(var(--to, 1.4)); opacity: 0; }
+}
+
+@keyframes fx-spin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+
 @media (prefers-reduced-motion: reduce) {
 	html {
 		scroll-behavior: auto;
+	}
+
+	.fx-p {
+		animation: none !important;
+		opacity: 0 !important;
 	}
 }

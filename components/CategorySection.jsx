@@ -3,6 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import LeaderShowcase from "./LeaderShowcase";
 import RankList from "./RankList";
+import { tint } from "./LeaderShowcase";
 import { championCenteredUrl } from "@/lib/ddragon";
 
 // Which ranking a category shows: per game (unless it sets defaultView) or its total/best toggle
@@ -63,6 +64,13 @@ export default function CategorySection({ site, category, number, index }) {
 				/>
 			)}
 			<div className="absolute inset-0 -z-10 bg-gradient-to-b from-abyss via-abyss/40 to-abyss" />
+			{/* Soft glow in the category's colour, behind the leader */}
+			<div
+				className="absolute inset-0 -z-10"
+				style={{
+					background: `radial-gradient(ellipse 45% 60% at ${reverse ? "75%" : "25%"} 50%, ${tint(category.descriptor.accent, 14)}, transparent 70%)`,
+				}}
+			/>
 
 			<div className="mx-auto grid max-w-6xl items-center gap-14 px-6 md:grid-cols-2 md:gap-20">
 				<div className={reverse ? "md:order-2" : ""}>
@@ -75,7 +83,7 @@ export default function CategorySection({ site, category, number, index }) {
 					viewport={{ once: true, amount: 0.2 }}
 					transition={{ duration: 0.7, ease: "easeOut" }}
 				>
-					<p className="eyebrow text-gold">
+					<p className="eyebrow text-gold" style={{ color: category.descriptor.accent }}>
 						{sectionNumber(number)} — {descriptor.eyebrow}
 					</p>
 					<h2 className="title-display mt-3 text-5xl md:text-6xl">{category.descriptor.title}</h2>

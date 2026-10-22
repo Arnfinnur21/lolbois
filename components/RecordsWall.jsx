@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import ShapeFrame from "./ShapeFrame";
 import RankList, { PlayerName } from "./RankList";
 import ValueIcon from "./ValueIcon";
+import { tint } from "./LeaderShowcase";
 import { ViewToggle, sectionId, useCategoryView } from "./CategorySection";
 import { championCenteredUrl, profileIconUrl } from "@/lib/ddragon";
 import { displayValue, roleNoteFor, secondaryText } from "@/lib/utils";
@@ -20,18 +21,30 @@ function RecordCard({ site, category, index, onOpen }) {
 			type="button"
 			id={sectionId(descriptor.key)}
 			onClick={onOpen}
-			className="group flex scroll-mt-28 flex-col border border-gold/20 bg-navy/50 p-5 text-left transition-colors hover:border-gold/60 hover:bg-navy/80"
+			className="group flex scroll-mt-28 flex-col border border-[var(--card-border)] bg-navy/50 p-5 text-left transition-colors hover:border-[var(--card-border-hover)] hover:bg-navy/80"
+			style={{
+				"--card-border": tint(descriptor.accent, 25) ?? "rgb(200 170 110 / 0.2)",
+				"--card-border-hover": tint(descriptor.accent, 70) ?? "rgb(200 170 110 / 0.6)",
+			}}
 			initial={{ opacity: 0, y: 24 }}
 			whileInView={{ opacity: 1, y: 0 }}
 			viewport={{ once: true, amount: 0.2 }}
 			transition={{ duration: 0.5, ease: "easeOut", delay: (index % 4) * 0.08 }}
 		>
-			<p className="eyebrow text-[0.62rem] text-gold">{descriptor.eyebrow}</p>
+			<p className="eyebrow text-[0.62rem] text-gold" style={{ color: descriptor.accent }}>
+				{descriptor.eyebrow}
+			</p>
 			<h3 className="title-display mt-2 text-2xl">{descriptor.title}</h3>
 			<p className="mt-1 text-xs text-muted">{descriptor.flavor}</p>
 
 			<div className="mx-auto mt-5 w-3/5 transition-transform duration-300 group-hover:scale-105">
-				<ShapeFrame shape={shape} src={champ?.id && championCenteredUrl(champ.id)} alt={champ?.name} />
+				<ShapeFrame
+					shape={shape}
+					src={champ?.id && championCenteredUrl(champ.id)}
+					alt={champ?.name}
+					accent={descriptor.accent}
+					effect={descriptor.effect}
+				/>
 			</div>
 
 			<div className="mt-4 flex items-center gap-3">
@@ -112,7 +125,9 @@ function RankingDialog({ site, category, onClose }) {
 				>
 					✕
 				</button>
-				<p className="eyebrow text-gold">{descriptor.eyebrow}</p>
+				<p className="eyebrow text-gold" style={{ color: descriptor.accent }}>
+					{descriptor.eyebrow}
+				</p>
 				<h3 id="ranking-title" className="title-display mt-2 pr-8 text-4xl">
 					{category.descriptor.title}
 				</h3>
