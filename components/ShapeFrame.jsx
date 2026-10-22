@@ -142,6 +142,9 @@ const SHAPES = {
 	},
 };
 
+// How long each skin shows before fading to the other
+const SKIN_SWAP_SECONDS = 7;
+
 // Coin piles in the 0–100 frame box: [centre x, bottom coin's top y, coins, half-width]
 const COIN_PILES = [
 	[50, 92, 5, 12],
@@ -238,9 +241,25 @@ export default function ShapeFrame({
 				viewport={{ once: true, amount: 0.3 }}
 				transition={{ duration: 0.7, ease: "easeOut", delay }}
 			>
-				{src && (
-					<img src={src} alt={alt} className="h-full w-full object-cover" loading="lazy" />
-				)}
+				{/* `src` can be a list of skins: two crossfade back and forth (portrait-swap in globals.css) */}
+				{[src]
+					.flat()
+					.filter(Boolean)
+					.slice(0, 2)
+					.map((url, i, all) => (
+						<img
+							key={url}
+							src={url}
+							alt={i ? "" : alt}
+							className="absolute inset-0 h-full w-full object-cover"
+							loading="lazy"
+							style={
+								all.length > 1
+									? { animation: `portrait-swap ${SKIN_SWAP_SECONDS * 2}s ease-in-out ${-i * SKIN_SWAP_SECONDS}s infinite` }
+									: undefined
+							}
+						/>
+					))}
 				<div className="absolute inset-0 bg-gradient-to-t from-abyss/60 via-transparent to-transparent" />
 			</motion.div>
 			{s.echo && (

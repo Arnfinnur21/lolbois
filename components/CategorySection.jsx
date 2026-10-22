@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import LeaderShowcase from "./LeaderShowcase";
 import RankList from "./RankList";
 import { tint } from "./LeaderShowcase";
-import { championCenteredUrl } from "@/lib/ddragon";
+import { portraitArt } from "@/lib/ddragon";
 
 // Which ranking a category shows: per game (unless it sets defaultView) or its total/best toggle
 export function useCategoryView(category) {
@@ -46,7 +46,7 @@ export const sectionId = (key) => `cat-${key}`;
 export default function CategorySection({ site, category, number, index }) {
 	const { view, setView, descriptor, ranked } = useCategoryView(category);
 	const [leader, ...rest] = ranked;
-	const champ = leader.stat.topChamps[0];
+	const backdrop = portraitArt(leader.player, leader.stat).srcs[0];
 	const reverse = index % 2 === 1;
 	const shape = category.descriptor.shape ?? (reverse ? "circle" : "diamond");
 
@@ -55,9 +55,9 @@ export default function CategorySection({ site, category, number, index }) {
 			id={sectionId(category.descriptor.key)}
 			className="relative isolate scroll-mt-28 overflow-hidden border-t border-gold/10 py-20 md:py-28"
 		>
-			{champ?.id && (
+			{backdrop && (
 				<img
-					src={championCenteredUrl(champ.id)}
+					src={backdrop}
 					alt=""
 					loading="lazy"
 					className="absolute inset-0 -z-20 h-full w-full object-cover opacity-[0.07]"

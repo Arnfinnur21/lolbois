@@ -62,6 +62,7 @@ npm run gen-data -- --offline    # rebuild data/site.json from the cache only, n
 
 ### Adding players or modes
 
+- **Portraits**: [`data/portraits.json`](data/portraits.json) sets the champion and skins (by name, as in the client) shown for each player. Two skins crossfade. Run `npm run gen-data -- --offline` after editing.
 - **Player**: add `{ "gameName": "...", "tagLine": "..." }` to `data/players.json` and run `npm run gen-data`.
 - **Mode**: modes with no games this season are hidden automatically. Add an entry to `MODES` in [`lib/modes.js`](lib/modes.js) with its queue ids from [queues.json](https://static.developer.riotgames.com/docs/lol/queues.json). Plain ARAM (queue 450) is there, commented out.
 - `SEASON_START`, `MIN_GAMES` and `MIN_DUO_GAMES` live in the same file.

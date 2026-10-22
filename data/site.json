@@ -1,5 +1,5 @@
 {
-	"generatedAt": "2026-10-22T18:13:04.155Z",
+	"generatedAt": "2026-10-22T19:44:39.406Z",
 	"ddragonVersion": "16.21.1",
 	"players": [
 		{
@@ -7,56 +7,119 @@
 			"name": "Nubblys",
 			"tag": "EUNE",
 			"iconId": 6408,
-			"level": 625
+			"level": 625,
+			"portrait": {
+				"id": "Gangplank",
+				"name": "Gangplank",
+				"skins": [
+					14,
+					3
+				]
+			}
 		},
 		{
 			"puuid": "j18Con6HhLAONSGm0X_utXK-eBPGpq3OW_2pN4QEk6bCwQHZufEv5WgZUF6NRtzuiYrmsC4G1LPFVA",
 			"name": "Agusto",
 			"tag": "ISL",
 			"iconId": 6298,
-			"level": 520
+			"level": 520,
+			"portrait": {
+				"id": "Caitlyn",
+				"name": "Caitlyn",
+				"skins": [
+					11,
+					30
+				]
+			}
 		},
 		{
 			"puuid": "7rjB9FTIaQhmOrhqIxufE2AG7X8K0enJXy3U7msVWB-7xK8OmZcp2kLsAtw9c93mcg51-FF9LYExYA",
 			"name": "Smoochy",
 			"tag": "1280",
 			"iconId": 6029,
-			"level": 278
+			"level": 278,
+			"portrait": {
+				"id": "Aphelios",
+				"name": "Aphelios",
+				"skins": [
+					1,
+					0
+				]
+			}
 		},
 		{
 			"puuid": "xArCqJH8DsDZgGdwGdCLQlvb9VjS6gng128ag7r-qBVQGx4oWXf36WIWiaqF449ck2TyKBKenIdekw",
 			"name": "Vago",
 			"tag": "225",
 			"iconId": 5488,
-			"level": 214
+			"level": 214,
+			"portrait": {
+				"id": "Syndra",
+				"name": "Syndra",
+				"skins": [
+					44
+				]
+			}
 		},
 		{
 			"puuid": "MCOgFGVwvNZ6BTd-rDcoqx8jPbX3WiSKBTcAPtXcrPaWUn8y3x5VgaYodalbewBVQJl1g2TdD09PEA",
 			"name": "Uncle",
 			"tag": "5472",
 			"iconId": 6229,
-			"level": 294
+			"level": 294,
+			"portrait": {
+				"id": "Volibear",
+				"name": "Volibear",
+				"skins": [
+					4,
+					29
+				]
+			}
 		},
 		{
 			"puuid": "KajmIyrgDSjqpXdLfCYrebhWAsLYo27D-AbXuQHDh61ikKEF7orupgWTsrILJ0yUJ9ipdyGrJaUt9w",
 			"name": "Fats",
 			"tag": "EUNE",
 			"iconId": 513,
-			"level": 422
+			"level": 422,
+			"portrait": {
+				"id": "Naafiri",
+				"name": "Naafiri",
+				"skins": [
+					20,
+					29
+				]
+			}
 		},
 		{
 			"puuid": "BlwfURffyMhHVN1sDIg8LP_qqKwxsO-PBPMVVIBJHl7nbtsX1WvXJzcAMhP1hLXGVp5TjCwMkZDUcA",
 			"name": "The Hooker",
 			"tag": "EUNE",
 			"iconId": 687,
-			"level": 237
+			"level": 237,
+			"portrait": {
+				"id": "Thresh",
+				"name": "Thresh",
+				"skins": [
+					59,
+					6
+				]
+			}
 		},
 		{
 			"puuid": "pZ980ziPxy6EQVCKJOUnvqIjoCwg6I5C6idX4oXvZGvg-08bPVKduCOPZy6WZCFgGi2didrmdVZsig",
 			"name": "Equinix",
 			"tag": "EUNE",
 			"iconId": 26,
-			"level": 184
+			"level": 184,
+			"portrait": {
+				"id": "Nocturne",
+				"name": "Nocturne",
+				"skins": [
+					4,
+					5
+				]
+			}
 		}
 	],
 	"seasonStart": "2026-01-08",

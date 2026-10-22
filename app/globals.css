@@ -114,6 +114,13 @@ body {
 	100% { transform: scale(var(--to, 1.4)); opacity: 0; }
 }
 
+/* Two skins in one frame: each shows for half the cycle, crossfading at the switch */
+@keyframes portrait-swap {
+	0%, 44% { opacity: 1; }
+	50%, 94% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
 @keyframes fx-spin {
 	from { transform: rotate(0deg); }
 	to { transform: rotate(360deg); }

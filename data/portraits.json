@@ -1,0 +1,11 @@
+{
+	"_howTo": "Each player's portrait: the champion shown wherever their main would be, and the skins it fades between. Use the skin names from the League client (or \"default\"). Players not listed show their most played champion's default skin. Run npm run gen-data after editing.",
+	"Fats": { "champion": "Naafiri", "skins": ["Glizzy Naafiri", "Warhound Naafiri"] },
+	"Smoochy": { "champion": "Aphelios", "skins": ["Nightbringer Aphelios", "default"] },
+	"Vago": { "champion": "Syndra", "skins": ["Spirit Blossom Syndra"] },
+	"Nubblys": { "champion": "Gangplank", "skins": ["Pool Party Gangplank", "Sailor Gangplank"] },
+	"Uncle": { "champion": "Volibear", "skins": ["Captain Volibear", "Spirit Blossom Springs Volibear"] },
+	"The Hooker": { "champion": "Thresh", "skins": ["Janitor Thresh", "High Noon Thresh"] },
+	"Agusto": { "champion": "Caitlyn", "skins": ["Pulsefire Caitlyn", "Snow Moon Caitlyn"] },
+	"Equinix": { "champion": "Nocturne", "skins": ["Haunting Nocturne", "Eternum Nocturne"] }
+}

@@ -1,5 +1,5 @@
 import ShapeFrame from "./ShapeFrame";
-import { championCenteredUrl, profileIconUrl } from "@/lib/ddragon";
+import { portraitArt, profileIconUrl } from "@/lib/ddragon";
 import { displayValue, roleNoteFor, secondaryText } from "@/lib/utils";
 import { PlayerName } from "./RankList";
 import ValueIcon from "./ValueIcon";
@@ -12,14 +12,14 @@ export const tint = (accent, percent) =>
 // `compact` is the smaller version used in paired sections
 export default function LeaderShowcase({ site, descriptor, entry, shape, compact = false }) {
 	const { player, stat } = entry;
-	const champ = stat.topChamps[0];
+	const art = portraitArt(player, stat);
 
 	return (
 		<div className={`relative mx-auto w-full pb-12 ${compact ? "max-w-[300px]" : "max-w-[420px]"}`}>
 			<ShapeFrame
 				shape={shape}
-				src={champ?.id && championCenteredUrl(champ.id)}
-				alt={champ?.name}
+				src={art.srcs}
+				alt={art.name}
 				accent={descriptor.accent}
 				effect={descriptor.effect}
 			/>
@@ -33,7 +33,7 @@ export default function LeaderShowcase({ site, descriptor, entry, shape, compact
 					className="size-12 rounded-full ring-1 ring-gold"
 				/>
 				<div>
-					<p className="eyebrow text-[0.65rem] text-gold" style={{ color: descriptor.accent }}>#1{champ ? ` · ${champ.name}` : ""}</p>
+					<p className="eyebrow text-[0.65rem] text-gold" style={{ color: descriptor.accent }}>#1{art.name ? ` · ${art.name}` : ""}</p>
 					<PlayerName
 						name={player.name}
 						note={roleNoteFor(descriptor, stat)}

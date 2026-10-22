@@ -1,5 +1,5 @@
 import DiamondRoster from "./DiamondRoster";
-import { championCenteredUrl, profileIconUrl } from "@/lib/ddragon";
+import { portraitArt, profileIconUrl } from "@/lib/ddragon";
 import { formatDate } from "@/lib/utils";
 import { activeModeKeys } from "@/lib/categories";
 
@@ -12,7 +12,7 @@ function rosterByGames(site, modes) {
 				.filter(Boolean)
 				.sort((a, b) => b.games - a.games)[0];
 			const games = modes.reduce((n, m) => n + (m.stats[player.puuid]?.games ?? 0), 0);
-			return { player, games, champ: stat?.topChamps[0] };
+			return { player, games, art: portraitArt(player, stat) };
 		})
 		.filter((p) => p.games > 0)
 		.sort((a, b) => b.games - a.games);
@@ -33,11 +33,11 @@ export default function Hero({ site }) {
 				<figure className="mx-auto w-full max-w-[620px]">
 					{/* Most games first: each diamond is their main champ, profile icon on the tip */}
 					<DiamondRoster
-						items={roster.map(({ player, games, champ }) => ({
+						items={roster.map(({ player, games, art }) => ({
 							key: player.puuid,
-							src: champ?.id && championCenteredUrl(champ.id),
-							alt: champ?.name,
-							title: `${player.name} · ${games} games${champ ? ` · ${champ.name}` : ""}`,
+							src: art.srcs,
+							alt: art.name,
+							title: `${player.name} · ${games} games${art.name ? ` · ${art.name}` : ""}`,
 							badge: (
 								<img
 									src={profileIconUrl(site.ddragonVersion, player.iconId)}

@@ -6,14 +6,14 @@ import RankList, { PlayerName } from "./RankList";
 import ValueIcon from "./ValueIcon";
 import { tint } from "./LeaderShowcase";
 import { ViewToggle, sectionId, useCategoryView } from "./CategorySection";
-import { championCenteredUrl, profileIconUrl } from "@/lib/ddragon";
+import { portraitArt, profileIconUrl } from "@/lib/ddragon";
 import { displayValue, roleNoteFor, secondaryText } from "@/lib/utils";
 
 // One record as a card: the holder in a small frame, runners-up below, click for everything
 function RecordCard({ site, category, index, onOpen }) {
 	const { descriptor, ranked } = category;
 	const [leader, ...rest] = ranked;
-	const champ = leader.stat.topChamps[0];
+	const art = portraitArt(leader.player, leader.stat);
 	const shape = descriptor.shape ?? (index % 2 ? "circle" : "diamond");
 
 	return (
@@ -40,8 +40,8 @@ function RecordCard({ site, category, index, onOpen }) {
 			<div className="mx-auto mt-5 w-3/5 transition-transform duration-300 group-hover:scale-105">
 				<ShapeFrame
 					shape={shape}
-					src={champ?.id && championCenteredUrl(champ.id)}
-					alt={champ?.name}
+					src={art.srcs}
+					alt={art.name}
 					accent={descriptor.accent}
 					effect={descriptor.effect}
 				/>

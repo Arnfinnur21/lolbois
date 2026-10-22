@@ -21,7 +21,7 @@ import {
 	writeCacheJson,
 	CACHE_VERSION,
 } from "../lib/matchCache.js";
-import { getLatestVersion, getChampions, getItems } from "../lib/ddragon.js";
+import { getLatestVersion, getChampions, getItems, getChampionSkins } from "../lib/ddragon.js";
 import { aggregate } from "../lib/aggregate.js";
 import { MODES, SEASON_START, MIN_GAMES, MIN_DUO_GAMES } from "../lib/modes.js";
 
@@ -175,6 +175,47 @@ async function loadDDragon() {
 	}
 }
 
+// A champion's skin list, from DDragon or the cache when offline
+async function championSkins(version, champId) {
+	const cache = readCacheJson("skins.json", {});
+	const key = `${version}:${champId}`;
+	try {
+		cache[key] = await getChampionSkins(version, champId);
+		writeCacheJson("skins.json", cache);
+	} catch (err) {
+		if (!cache[key]) throw err;
+	}
+	return cache[key];
+}
+
+// data/portraits.json -> { puuid: { id, name, skins: [skin numbers] } }
+async function resolvePortraits(players, ddragon) {
+	const file = path.resolve("data/portraits.json");
+	if (!fs.existsSync(file)) return {};
+	const config = JSON.parse(fs.readFileSync(file, "utf-8"));
+	const champions = Object.values(ddragon.champions);
+	const out = {};
+
+	for (const player of players) {
+		const entry = config[player.name] ?? config[player.riotId];
+		if (!entry) continue;
+		const wantedChamp = String(entry.champion).toLowerCase();
+		const champ = champions.find((c) => c.id.toLowerCase() === wantedChamp || c.name.toLowerCase() === wantedChamp);
+		if (!champ) {
+			console.warn(`⚠️  portraits.json: no champion called "${entry.champion}" (${player.name})`);
+			continue;
+		}
+		const skins = await championSkins(ddragon.version, champ.id);
+		const nums = (entry.skins?.length ? entry.skins : ["default"]).flatMap((wanted) => {
+			const skin = skins.find((s) => s.name.toLowerCase() === String(wanted).toLowerCase());
+			if (!skin) console.warn(`⚠️  portraits.json: ${champ.name} has no skin "${wanted}" (${player.name})`);
+			return skin ? [skin.num] : [];
+		});
+		out[player.puuid] = { id: champ.id, name: champ.name, skins: nums.length ? nums : [0] };
+	}
+	return out;
+}
+
 async function main() {
 	const started = Date.now();
 	const players = await resolveRoster();
@@ -186,6 +227,7 @@ async function main() {
 	}
 
 	const ddragon = await loadDDragon();
+	const portraits = await resolvePortraits(players, ddragon);
 	const result = aggregate({
 		matches: normalisePuuids(
 			[...cached.values()].filter((m) => ids.has(m.id)),
@@ -203,7 +245,14 @@ async function main() {
 	const site = {
 		generatedAt: new Date().toISOString(),
 		ddragonVersion: ddragon.version,
-		players: players.map(({ puuid, name, tag, iconId, level }) => ({ puuid, name, tag, iconId, level })),
+		players: players.map(({ puuid, name, tag, iconId, level }) => ({
+			puuid,
+			name,
+			tag,
+			iconId,
+			level,
+			...(portraits[puuid] && { portrait: portraits[puuid] }),
+		})),
 		...result,
 	};
 	const out = path.resolve("data/site.json");
