@@ -176,7 +176,7 @@ function CoinPiles({ id, delay }) {
 						<motion.g
 							key={`${pile}-${i}`}
 							initial={{ opacity: 0, y: -6 }}
-							whileInView={{ opacity: 1, y: 0 }}
+							whileInView={{ opacity: 1, y: -7 }}
 							viewport={{ once: true }}
 							transition={{ duration: 0.3, ease: "easeOut", delay: delay + 0.5 + pile * 0.12 + i * 0.07 }}
 						>
@@ -270,7 +270,16 @@ export default function ShapeFrame({
 				viewport={{ once: true, amount: 0.3 }}
 				transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: delay + 0.15 }}
 			>
-				<path d={s.path} vectorEffect="non-scaling-stroke" />
+				{/* The shape filled black masks out everything inside it, so overlapping parts
+				    (anchor ring, bar and shank) merge into one silhouette. The stroke is doubled
+				    because only its outer half survives the mask. */}
+				<defs>
+					<mask id={`${clipId}-outline`} maskUnits="userSpaceOnUse" x="-20" y="-20" width="140" height="140">
+						<rect x="-20" y="-20" width="140" height="140" fill="white" />
+						<path d={s.path} fill="black" fillRule={fillRule} />
+					</mask>
+				</defs>
+				<path d={s.path} vectorEffect="non-scaling-stroke" strokeWidth="2" mask={`url(#${clipId}-outline)`} />
 				{s.decor && <path d={s.decor} vectorEffect="non-scaling-stroke" opacity="0.7" />}
 			</motion.svg>
 			{s.ornament === "coins" && <CoinPiles id={clipId} delay={delay} />}
