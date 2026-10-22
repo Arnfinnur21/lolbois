@@ -1,4 +1,8 @@
 // Ambient particle effects around a ShapeFrame, animated in CSS (see .fx-* in globals.css).
+// Positioning is also set inline, so a stale or missing stylesheet hides particles
+// instead of leaving them as stray dots in the corner.
+const LAYER = { position: "absolute", inset: 0, pointerEvents: "none", containerType: "size" };
+const PARTICLE = { position: "absolute", opacity: 0 };
 // Positions come from a seeded random so the server and browser render the same thing.
 
 function seeded(text) {
@@ -182,12 +186,13 @@ const KINDS = {
 function Radar({ color }) {
 	return (
 		<>
-			<div className="fx-layer" aria-hidden>
+			<div className="fx-layer" aria-hidden style={LAYER}>
 				{[0, 1, 2].map((i) => (
 					<span
 						key={i}
 						className="fx-p"
 						style={{
+							...PARTICLE,
 							inset: "8%",
 							borderRadius: "50%",
 							border: `1.5px solid ${color}`,
@@ -197,10 +202,11 @@ function Radar({ color }) {
 					/>
 				))}
 			</div>
-			<div className="fx-layer" aria-hidden style={{ zIndex: 5 }}>
+			<div className="fx-layer" aria-hidden style={{ ...LAYER, zIndex: 5 }}>
 				<span
 					className="fx-p"
 					style={{
+						...PARTICLE,
 						inset: "6%",
 						borderRadius: "50%",
 						opacity: 0.45,
@@ -220,9 +226,9 @@ export default function ShapeEffect({ kind, color = "#c8aa6e", layer }) {
 	if (!spec || spec.layer !== layer) return null;
 	const r = seeded(kind);
 	return (
-		<div className="fx-layer" aria-hidden style={layer === "front" ? { zIndex: 5 } : undefined}>
+		<div className="fx-layer" aria-hidden style={layer === "front" ? { ...LAYER, zIndex: 5 } : LAYER}>
 			{Array.from({ length: spec.count }, (_, i) => (
-				<span key={i} className="fx-p" style={spec.particle(r, color, i)} />
+				<span key={i} className="fx-p" style={{ ...PARTICLE, ...spec.particle(r, color, i) }} />
 			))}
 		</div>
 	);

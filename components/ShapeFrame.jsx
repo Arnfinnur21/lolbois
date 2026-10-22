@@ -78,16 +78,17 @@ const SHAPES = {
 		from: { rotate: 45, scale: 0.8 },
 	},
 	drops: {
-		// One big drop, with two small ones either side at different heights
-		path: `${dropPath(19, 14, 0.62)} ${dropPath(1, 52, 0.22)} ${dropPath(77, 26, 0.22)}`,
+		// One big drop filling the frame, two small ones up either side at different heights
+		path: `${dropPath(5, 4, 0.9)} ${dropPath(1, 20, 0.16)} ${dropPath(83, 32, 0.16)}`,
 		artInset: "4%",
 		from: { rotate: 0, scale: 0.85 },
 	},
 	wings: {
+		// Tall, wide wings; the halo is outline-only so it doesn't cut into the art
 		path:
-			"M50 30 C40 16 22 10 2 12 Q6 28 14 30 Q12 40 22 42 Q20 52 30 54 Q30 62 40 64 Q44 74 50 80 " +
-			"Q56 74 60 64 Q70 62 70 54 Q80 52 78 42 Q88 40 86 30 Q94 28 98 12 C78 10 60 16 50 30 Z",
-		decor: "M24 22 Q30 30 30 40 M76 22 Q70 30 70 40",
+			"M50 28 C38 10 16 2 -4 6 Q2 24 10 28 Q6 40 16 44 Q12 56 24 60 Q22 72 34 74 Q38 86 50 97 " +
+			"Q62 86 66 74 Q78 72 76 60 Q88 56 84 44 Q94 40 90 28 Q98 24 104 6 C84 2 62 10 50 28 Z",
+		decor: "M34 9 A16 5 0 1 0 66 9 A16 5 0 1 0 34 9 Z M20 18 Q28 28 28 40 M80 18 Q72 28 72 40",
 		artInset: "4%",
 		from: { rotate: 0, scale: 0.7 },
 	},
