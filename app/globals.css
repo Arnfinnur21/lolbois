@@ -19,6 +19,13 @@
 html {
 	scroll-behavior: smooth;
 	background: var(--color-abyss);
+	/* Hidden scrollbar; the page legend shows progress instead. Scrolling still works. */
+	scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+	display: none;
 }
 
 body {

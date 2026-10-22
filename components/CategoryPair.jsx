@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import LeaderShowcase from "./LeaderShowcase";
 import RankList from "./RankList";
-import { ViewToggle, sectionNumber, useCategoryView } from "./CategorySection";
+import { ViewToggle, sectionId, sectionNumber, useCategoryView } from "./CategorySection";
 
 // One half of a paired section: a smaller leader frame above the text and ranking
 function PairHalf({ site, category, number, shape, delay }) {
@@ -11,6 +11,8 @@ function PairHalf({ site, category, number, shape, delay }) {
 
 	return (
 		<motion.div
+			id={sectionId(category.descriptor.key)}
+			className="scroll-mt-20"
 			initial={{ opacity: 0, y: 30 }}
 			whileInView={{ opacity: 1, y: 0 }}
 			viewport={{ once: true, amount: 0.15 }}

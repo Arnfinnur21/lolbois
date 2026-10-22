@@ -39,6 +39,9 @@ export function ViewToggle({ category, view, setView }) {
 
 export const sectionNumber = (n) => String(n).padStart(2, "0");
 
+// Anchor id for a category, used by the page legend
+export const sectionId = (key) => `cat-${key}`;
+
 export default function CategorySection({ site, category, number, index }) {
 	const { view, setView, descriptor, ranked } = useCategoryView(category);
 	const [leader, ...rest] = ranked;
@@ -47,7 +50,10 @@ export default function CategorySection({ site, category, number, index }) {
 	const shape = category.descriptor.shape ?? (reverse ? "circle" : "diamond");
 
 	return (
-		<section className="relative isolate overflow-hidden border-t border-gold/10 py-20 md:py-28">
+		<section
+			id={sectionId(category.descriptor.key)}
+			className="relative isolate scroll-mt-14 overflow-hidden border-t border-gold/10 py-20 md:py-28"
+		>
 			{champ?.id && (
 				<img
 					src={championCenteredUrl(champ.id)}

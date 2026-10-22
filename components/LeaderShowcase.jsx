@@ -1,6 +1,8 @@
 import ShapeFrame from "./ShapeFrame";
 import { championCenteredUrl, profileIconUrl } from "@/lib/ddragon";
-import { displayValue, secondaryText } from "@/lib/utils";
+import { displayValue, roleNoteFor, secondaryText } from "@/lib/utils";
+import { PlayerName } from "./RankList";
+import ValueIcon from "./ValueIcon";
 
 // `compact` is the smaller version used in paired sections
 export default function LeaderShowcase({ site, descriptor, entry, shape, compact = false }) {
@@ -18,10 +20,15 @@ export default function LeaderShowcase({ site, descriptor, entry, shape, compact
 				/>
 				<div>
 					<p className="eyebrow text-[0.65rem] text-gold">#1{champ ? ` · ${champ.name}` : ""}</p>
-					<p className="font-semibold text-gold-pale">{player.name}</p>
+					<PlayerName
+						name={player.name}
+						note={roleNoteFor(descriptor, stat)}
+						className="max-w-[11rem] whitespace-normal font-semibold text-gold-pale"
+					/>
 				</div>
 				<div className="border-l border-gold/30 pl-4 text-right">
 					<p className="title-display text-3xl normal-case text-gold">
+						<ValueIcon icon={descriptor.valueIcon} className="mr-2" />
 						{displayValue(descriptor, stat)}
 					</p>
 					<p className="text-xs text-muted">{secondaryText(descriptor, stat)}</p>

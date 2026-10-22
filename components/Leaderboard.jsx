@@ -1,7 +1,8 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
 import ModeIntro from "./ModeIntro";
-import CategorySection from "./CategorySection";
+import CategorySection, { sectionId, sectionNumber } from "./CategorySection";
+import SectionLegend, { ProgressLine } from "./SectionLegend";
 import CategoryPair from "./CategoryPair";
 import PingSection from "./PingSection";
 import DuoSection from "./DuoSection";
@@ -34,6 +35,22 @@ export default function Leaderboard({ site }) {
 			return { ...block, number };
 		});
 	}, [categories]);
+	// Legend entries in page order: every category, then the closing sections
+	const legendItems = useMemo(
+		() => [
+			...blocks.flatMap((block) =>
+				block.categories.map((c, i) => ({
+					id: sectionId(c.descriptor.key),
+					label: c.descriptor.title,
+					number: sectionNumber(block.number + i),
+				}))
+			),
+			{ id: "pings", label: "Ping Spammers" },
+			{ id: "duos", label: "Duos" },
+			{ id: "squad", label: "Squad" },
+		],
+		[blocks]
+	);
 
 	if (!mode) return null;
 
@@ -41,7 +58,10 @@ export default function Leaderboard({ site }) {
 		<div id="stats">
 			<ModeIntro site={site} modeKeys={modeKeys} mode={mode} onChoose={choose} />
 
+			<SectionLegend items={legendItems} startId={legendItems[0]?.id} />
+
 			<nav className="sticky top-0 z-40 border-y border-gold/15 bg-abyss/85 backdrop-blur">
+				<ProgressLine />
 				<div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3">
 					<a href="#top" className="title-display text-lg">
 						Lolbois

@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import { playerById } from "@/lib/categories";
 import { profileIconUrl } from "@/lib/ddragon";
 import { formatStat } from "@/lib/utils";
@@ -48,23 +50,46 @@ function DuoList({ site, title, duos, tone }) {
 	);
 }
 
+const VIEWS = [
+	["any", "Any stack"],
+	["pure", "Just the two"],
+];
+
 export default function DuoSection({ site, mode }) {
-	const duos = site.modes[mode].duos;
-	const best = duos.filter((d) => d.winRate >= 0.5).slice(0, LIMIT);
-	const cursed = duos
-		.filter((d) => d.winRate < 0.5)
-		.reverse()
-		.slice(0, LIMIT);
+	const [view, setView] = useState("any");
+	const { duos: anyStack, pureDuos } = site.modes[mode];
+	const duos = view === "pure" && pureDuos ? pureDuos : anyStack;
+	// Best five at the top, the five worst (that aren't already listed) at the bottom
+	const best = duos.slice(0, LIMIT);
+	const cursed = duos.slice(Math.max(LIMIT, duos.length - LIMIT)).reverse();
 
 	return (
-		<section className="border-t border-gold/10 py-20 md:py-28">
+		<section id="duos" className="scroll-mt-14 border-t border-gold/10 py-20 md:py-28">
 			<div className="mx-auto max-w-6xl px-6">
 				<div className="text-center">
 					<p className="eyebrow text-gold-pale">Better together?</p>
 					<h2 className="title-display mt-3 text-5xl md:text-6xl">Duos</h2>
 					<p className="mt-4 text-muted">
-						Win rate when two of the squad are on the same team ({site.minDuoGames}+ games together).
+						{view === "pure"
+							? "Win rate when those two were the only ones from the squad on the team"
+							: "Win rate whenever both were on the same team, including bigger stacks"}{" "}
+						({site.minDuoGames}+ games together).
 					</p>
+					<div className="mt-6 inline-flex border border-gold/30" role="group" aria-label="Count">
+						{VIEWS.map(([key, label]) => (
+							<button
+								key={key}
+								type="button"
+								onClick={() => setView(key)}
+								aria-pressed={view === key}
+								className={`px-4 py-1.5 text-[0.7rem] font-semibold uppercase tracking-wider transition-colors ${
+									view === key ? "bg-gold text-abyss" : "text-muted hover:text-gold-pale"
+								}`}
+							>
+								{label}
+							</button>
+						))}
+					</div>
 				</div>
 				<div className="mt-14 grid gap-14 md:grid-cols-2">
 					<DuoList site={site} title="Dream teams" duos={best} tone="bg-hextech" />

@@ -7,7 +7,7 @@ export default function PlayerRoster({ site, mode }) {
 	const players = [...site.players].sort((a, b) => (stats[b.puuid]?.games ?? 0) - (stats[a.puuid]?.games ?? 0));
 
 	return (
-		<section className="border-t border-gold/10 py-20 md:py-28">
+		<section id="squad" className="scroll-mt-14 border-t border-gold/10 py-20 md:py-28">
 			<div className="mx-auto max-w-6xl px-6">
 				<div className="text-center">
 					<p className="eyebrow text-gold-pale">Meet the</p>
@@ -23,7 +23,7 @@ export default function PlayerRoster({ site, mode }) {
 								<div className="flex items-center gap-6 pl-2">
 									<div className="relative size-14 shrink-0">
 										<span
-											className="absolute inset-0 translate-x-1 -translate-y-1 rotate-45 scale-110 border border-gold/60"
+											className="absolute -inset-1.5 rounded-full border border-gold/60"
 											aria-hidden
 										/>
 										<img
