@@ -1,12 +1,12 @@
 // scripts/buildFavicons.js
-// Turns public/favicon.png into one-colour favicons: black for light mode, white for
-// dark mode. Outlines stay solid and fills become see-through, so the drawing keeps
-// its detail; the transparent background is kept. Run: npm run gen-icons
+// Turns public/favicon.png into one-colour silhouette favicons: black for light mode,
+// white for dark mode, keeping the transparent background. Lower FILL_OPACITY to let
+// the drawing's outlines show through the fills. Run: npm run gen-icons
 import sharp from "sharp";
 
 const SOURCE = "public/favicon.png";
 const SIZE = 256;
-const FILL_OPACITY = 0.35; // how much of the light fill areas shows, vs the solid outlines
+const FILL_OPACITY = 1; // 1 = solid silhouette; lower lets the outlines show through the fills
 const PADDING = 0.06; // empty margin around the cropped drawing
 
 const { data, info } = await sharp(SOURCE).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
