@@ -123,6 +123,13 @@ const SHAPES = {
 		artInset: "6%",
 		from: { rotate: 0, scale: 0.8 },
 	},
+	coins: {
+		// A circle raised to leave room for the coin piles drawn underneath
+		path: "M50 2 A36 36 0 1 1 50 74 A36 36 0 1 1 50 2 Z",
+		artInset: "4%",
+		ornament: "coins",
+		from: { rotate: 0, scale: 0.9 },
+	},
 	anchor: {
 		// Kept chunky so the art still reads; all parts wound the same way so overlaps stay filled
 		path:
@@ -134,6 +141,58 @@ const SHAPES = {
 		from: { rotate: -15, scale: 0.85 },
 	},
 };
+
+// Coin piles in the 0–100 frame box: [centre x, bottom coin's top y, coins, half-width]
+const COIN_PILES = [
+	[50, 92, 5, 12],
+	[21, 94, 3, 9],
+	[79, 95, 2, 9],
+];
+
+// Filled gold coin stacks drawn over the bottom of the frame, popping in bottom-up
+function CoinPiles({ id, delay }) {
+	const face = `${id}-face`;
+	const edge = `${id}-edge`;
+	return (
+		<svg viewBox="0 0 100 100" className="pointer-events-none absolute inset-0 h-full w-full overflow-visible" aria-hidden style={{ zIndex: 6 }}>
+			<defs>
+				<radialGradient id={face} cx="40%" cy="35%" r="70%">
+					<stop offset="0%" stopColor="#fff3c4" />
+					<stop offset="55%" stopColor="#f2c94c" />
+					<stop offset="100%" stopColor="#b8862b" />
+				</radialGradient>
+				<linearGradient id={edge} x1="0" x2="1">
+					<stop offset="0%" stopColor="#8a6420" />
+					<stop offset="50%" stopColor="#d4a53c" />
+					<stop offset="100%" stopColor="#7a561a" />
+				</linearGradient>
+			</defs>
+			{COIN_PILES.map(([cx, bottom, count, rx], pile) =>
+				Array.from({ length: count }, (_, i) => {
+					const ry = rx * 0.3;
+					const thick = rx * 0.22;
+					const top = bottom - i * thick;
+					return (
+						<motion.g
+							key={`${pile}-${i}`}
+							initial={{ opacity: 0, y: -6 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true }}
+							transition={{ duration: 0.3, ease: "easeOut", delay: delay + 0.5 + pile * 0.12 + i * 0.07 }}
+						>
+							{/* Coin edge, then the face on top */}
+							<path
+								d={`M${cx - rx} ${top} L${cx - rx} ${top + thick} A${rx} ${ry} 0 0 0 ${cx + rx} ${top + thick} L${cx + rx} ${top} Z`}
+								fill={`url(#${edge})`}
+							/>
+							<ellipse cx={cx} cy={top} rx={rx} ry={ry} fill={`url(#${face})`} stroke="#8a6420" strokeWidth="0.4" />
+						</motion.g>
+					);
+				})
+			)}
+		</svg>
+	);
+}
 
 // Art clipped into a shape, with a thin outline of the same shape set larger than it
 // and centred on it. `accent` colours the outline and glow; `effect` adds particles.
@@ -214,6 +273,7 @@ export default function ShapeFrame({
 				<path d={s.path} vectorEffect="non-scaling-stroke" />
 				{s.decor && <path d={s.decor} vectorEffect="non-scaling-stroke" opacity="0.7" />}
 			</motion.svg>
+			{s.ornament === "coins" && <CoinPiles id={clipId} delay={delay} />}
 			{effect && <ShapeEffect kind={effect} color={accent} layer="front" />}
 			{children}
 		</div>
