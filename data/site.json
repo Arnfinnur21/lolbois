@@ -1,0 +1,1683 @@
+{
+	"generatedAt": "2026-10-22T16:01:10.819Z",
+	"ddragonVersion": "16.21.1",
+	"players": [
+		{
+			"puuid": "ZIVXS0EZYmuR-KyEoY8dri41ZsfP7HDacAAIDR2w7GEtXywQJPODEaDlKIp4QRf1mNHbc25d3ntx0w",
+			"name": "Nubblys",
+			"tag": "EUNE",
+			"iconId": 6408,
+			"level": 625
+		},
+		{
+			"puuid": "j18Con6HhLAONSGm0X_utXK-eBPGpq3OW_2pN4QEk6bCwQHZufEv5WgZUF6NRtzuiYrmsC4G1LPFVA",
+			"name": "Agusto",
+			"tag": "ISL",
+			"iconId": 6298,
+			"level": 520
+		},
+		{
+			"puuid": "7rjB9FTIaQhmOrhqIxufE2AG7X8K0enJXy3U7msVWB-7xK8OmZcp2kLsAtw9c93mcg51-FF9LYExYA",
+			"name": "Smoochy",
+			"tag": "1280",
+			"iconId": 6029,
+			"level": 278
+		},
+		{
+			"puuid": "xArCqJH8DsDZgGdwGdCLQlvb9VjS6gng128ag7r-qBVQGx4oWXf36WIWiaqF449ck2TyKBKenIdekw",
+			"name": "Vago",
+			"tag": "225",
+			"iconId": 5488,
+			"level": 214
+		},
+		{
+			"puuid": "MCOgFGVwvNZ6BTd-rDcoqx8jPbX3WiSKBTcAPtXcrPaWUn8y3x5VgaYodalbewBVQJl1g2TdD09PEA",
+			"name": "Uncle",
+			"tag": "5472",
+			"iconId": 6229,
+			"level": 294
+		},
+		{
+			"puuid": "KajmIyrgDSjqpXdLfCYrebhWAsLYo27D-AbXuQHDh61ikKEF7orupgWTsrILJ0yUJ9ipdyGrJaUt9w",
+			"name": "Fats",
+			"tag": "EUNE",
+			"iconId": 513,
+			"level": 422
+		},
+		{
+			"puuid": "BlwfURffyMhHVN1sDIg8LP_qqKwxsO-PBPMVVIBJHl7nbtsX1WvXJzcAMhP1hLXGVp5TjCwMkZDUcA",
+			"name": "The Hooker",
+			"tag": "EUNE",
+			"iconId": 687,
+			"level": 237
+		},
+		{
+			"puuid": "pZ980ziPxy6EQVCKJOUnvqIjoCwg6I5C6idX4oXvZGvg-08bPVKduCOPZy6WZCFgGi2didrmdVZsig",
+			"name": "Equinix",
+			"tag": "EUNE",
+			"iconId": 26,
+			"level": 184
+		}
+	],
+	"seasonStart": "2026-01-08",
+	"minGames": 10,
+	"minDuoGames": 5,
+	"modes": {
+		"sr": {
+			"label": "Summoner's Rift",
+			"map": 11,
+			"totalGames": 785,
+			"stats": {
+				"MCOgFGVwvNZ6BTd-rDcoqx8jPbX3WiSKBTcAPtXcrPaWUn8y3x5VgaYodalbewBVQJl1g2TdD09PEA": {
+					"wins": 208,
+					"kills": 7.07,
+					"deaths": 6.24,
+					"assists": 8.07,
+					"dmgDealt": 20512.12,
+					"dmgTaken": 34615.5,
+					"dmgMitigated": 40009.94,
+					"vision": 24.78,
+					"wardsPlaced": 4.51,
+					"wardsKilled": 3.92,
+					"controlWards": 0.88,
+					"ccTime": 25.48,
+					"timeSpentDead": 207.38,
+					"pings": 25.6,
+					"enemyMissingPings": 1.16,
+					"pentas": 0,
+					"quadras": 4,
+					"firstBloods": 0.1,
+					"firstTowers": 0.02,
+					"towerDmg": 3085.88,
+					"turretTakedowns": 1.52,
+					"objectiveDmg": 33878.43,
+					"dragonTakedowns": 2.52,
+					"baronTakedowns": 0.56,
+					"objectivesStolen": 56,
+					"gold": 13291.01,
+					"cs": 193.35,
+					"healsOnTeammates": 32.52,
+					"shieldsOnTeammates": 6.04,
+					"soloKills": 1.06,
+					"skillshotsDodged": 34.97,
+					"skillshotsHit": 6.49,
+					"surrenders": 0.16,
+					"timePlayed": 1846.28,
+					"largestSpree": 3.17,
+					"outnumberedKills": 443,
+					"killsUnderOwnTurret": 246,
+					"killsNearEnemyTurret": 462,
+					"bombas": 1.2,
+					"saves": 0.01,
+					"buffsStolen": 0.67,
+					"allInPings": 0.01,
+					"assistMePings": 1.28,
+					"basicPings": 0,
+					"commandPings": 2.39,
+					"dangerPings": 0,
+					"enemyVisionPings": 2.45,
+					"getBackPings": 0.6,
+					"holdPings": 0,
+					"needVisionPings": 0.11,
+					"onMyWayPings": 14.02,
+					"pushPings": 0.2,
+					"retreatPings": 3.38,
+					"visionClearedPings": 0,
+					"bestSpree": 14,
+					"biggestCrit": 2619,
+					"biggestComeback": 23,
+					"biggestCsLead": 166.20000019669533,
+					"games": 383,
+					"winRate": 0.5431,
+					"firstBloodRate": 0.0966,
+					"firstTowerRate": 0.0209,
+					"kda": 2.43,
+					"dmgPerKill": 2900,
+					"totals": {
+						"wins": 208,
+						"kills": 2709,
+						"deaths": 2390,
+						"assists": 3091,
+						"dmgDealt": 7856141,
+						"dmgTaken": 13257736,
+						"dmgMitigated": 15323806,
+						"vision": 9490,
+						"wardsPlaced": 1729,
+						"wardsKilled": 1502,
+						"controlWards": 336,
+						"ccTime": 9760,
+						"timeSpentDead": 79425,
+						"pings": 9805,
+						"enemyMissingPings": 446,
+						"pentas": 0,
+						"quadras": 4,
+						"firstBloods": 37,
+						"firstTowers": 8,
+						"towerDmg": 1181891,
+						"turretTakedowns": 583,
+						"objectiveDmg": 12975438,
+						"dragonTakedowns": 965,
+						"baronTakedowns": 216,
+						"objectivesStolen": 56,
+						"gold": 5090456,
+						"cs": 74052,
+						"healsOnTeammates": 12454,
+						"shieldsOnTeammates": 2312,
+						"soloKills": 406,
+						"skillshotsDodged": 13394,
+						"skillshotsHit": 2485,
+						"surrenders": 62,
+						"timePlayed": 707126,
+						"largestSpree": 1216,
+						"outnumberedKills": 443,
+						"killsUnderOwnTurret": 246,
+						"killsNearEnemyTurret": 462,
+						"bombas": 460,
+						"saves": 2,
+						"buffsStolen": 258,
+						"allInPings": 5,
+						"assistMePings": 490,
+						"basicPings": 0,
+						"commandPings": 914,
+						"dangerPings": 0,
+						"enemyVisionPings": 938,
+						"getBackPings": 228,
+						"holdPings": 0,
+						"needVisionPings": 43,
+						"onMyWayPings": 5370,
+						"pushPings": 78,
+						"retreatPings": 1293,
+						"visionClearedPings": 0
+					},
+					"topChamps": [
+						{
+							"id": "Volibear",
+							"name": "Volibear",
+							"games": 249,
+							"wins": 145
+						},
+						{
+							"id": "Diana",
+							"name": "Diana",
+							"games": 30,
+							"wins": 14
+						},
+						{
+							"id": "Vi",
+							"name": "Vi",
+							"games": 15,
+							"wins": 10
+						}
+					],
+					"favItem": {
+						"id": 2510,
+						"name": "Dusk and Dawn",
+						"games": 263
+					}
+				},
+				"ZIVXS0EZYmuR-KyEoY8dri41ZsfP7HDacAAIDR2w7GEtXywQJPODEaDlKIp4QRf1mNHbc25d3ntx0w": {
+					"wins": 204,
+					"kills": 7.02,
+					"deaths": 5.7,
+					"assists": 6.66,
+					"dmgDealt": 31286.21,
+					"dmgTaken": 31874.4,
+					"dmgMitigated": 27288.73,
+					"vision": 27.18,
+					"wardsPlaced": 10.57,
+					"wardsKilled": 1.28,
+					"controlWards": 0.54,
+					"ccTime": 29.23,
+					"timeSpentDead": 206.45,
+					"pings": 12.98,
+					"enemyMissingPings": 1.23,
+					"pentas": 0,
+					"quadras": 1,
+					"firstBloods": 0.14,
+					"firstTowers": 0.31,
+					"towerDmg": 11179.01,
+					"turretTakedowns": 2.83,
+					"objectiveDmg": 15232.13,
+					"dragonTakedowns": 0.6,
+					"baronTakedowns": 0.33,
+					"objectivesStolen": 3,
+					"gold": 13999.88,
+					"cs": 221.22,
+					"healsOnTeammates": 42.68,
+					"shieldsOnTeammates": 9.8,
+					"soloKills": 3.07,
+					"skillshotsDodged": 31.02,
+					"skillshotsHit": 19.77,
+					"surrenders": 0.16,
+					"timePlayed": 1848.82,
+					"largestSpree": 3.34,
+					"outnumberedKills": 457,
+					"killsUnderOwnTurret": 401,
+					"killsNearEnemyTurret": 536,
+					"bombas": 4.15,
+					"saves": 0.01,
+					"buffsStolen": 0.1,
+					"allInPings": 0.01,
+					"assistMePings": 0.34,
+					"basicPings": 0,
+					"commandPings": 1.96,
+					"dangerPings": 0,
+					"enemyVisionPings": 3.99,
+					"getBackPings": 0.88,
+					"holdPings": 0,
+					"needVisionPings": 0.17,
+					"onMyWayPings": 2.74,
+					"pushPings": 0.08,
+					"retreatPings": 1.58,
+					"visionClearedPings": 0,
+					"bestSpree": 13,
+					"biggestCrit": 2479,
+					"biggestComeback": 20,
+					"biggestCsLead": 183.25000005960464,
+					"games": 385,
+					"winRate": 0.5299,
+					"firstBloodRate": 0.1403,
+					"firstTowerRate": 0.3143,
+					"kda": 2.4,
+					"dmgPerKill": 4455,
+					"totals": {
+						"wins": 204,
+						"kills": 2704,
+						"deaths": 2195,
+						"assists": 2565,
+						"dmgDealt": 12045191,
+						"dmgTaken": 12271644,
+						"dmgMitigated": 10506162,
+						"vision": 10464,
+						"wardsPlaced": 4070,
+						"wardsKilled": 492,
+						"controlWards": 207,
+						"ccTime": 11254,
+						"timeSpentDead": 79483,
+						"pings": 4996,
+						"enemyMissingPings": 475,
+						"pentas": 0,
+						"quadras": 1,
+						"firstBloods": 54,
+						"firstTowers": 121,
+						"towerDmg": 4303917,
+						"turretTakedowns": 1091,
+						"objectiveDmg": 5864371,
+						"dragonTakedowns": 231,
+						"baronTakedowns": 128,
+						"objectivesStolen": 3,
+						"gold": 5389952,
+						"cs": 85171,
+						"healsOnTeammates": 16433,
+						"shieldsOnTeammates": 3773,
+						"soloKills": 1181,
+						"skillshotsDodged": 11943,
+						"skillshotsHit": 7610,
+						"surrenders": 63,
+						"timePlayed": 711796,
+						"largestSpree": 1285,
+						"outnumberedKills": 457,
+						"killsUnderOwnTurret": 401,
+						"killsNearEnemyTurret": 536,
+						"bombas": 1597,
+						"saves": 3,
+						"buffsStolen": 40,
+						"allInPings": 4,
+						"assistMePings": 131,
+						"basicPings": 0,
+						"commandPings": 753,
+						"dangerPings": 0,
+						"enemyVisionPings": 1536,
+						"getBackPings": 337,
+						"holdPings": 0,
+						"needVisionPings": 66,
+						"onMyWayPings": 1054,
+						"pushPings": 32,
+						"retreatPings": 608,
+						"visionClearedPings": 0
+					},
+					"topChamps": [
+						{
+							"id": "Gangplank",
+							"name": "Gangplank",
+							"games": 149,
+							"wins": 81
+						},
+						{
+							"id": "Gragas",
+							"name": "Gragas",
+							"games": 138,
+							"wins": 70
+						},
+						{
+							"id": "DrMundo",
+							"name": "Dr. Mundo",
+							"games": 20,
+							"wins": 9
+						}
+					],
+					"favItem": {
+						"id": 3508,
+						"name": "Essence Reaver",
+						"games": 149
+					}
+				},
+				"KajmIyrgDSjqpXdLfCYrebhWAsLYo27D-AbXuQHDh61ikKEF7orupgWTsrILJ0yUJ9ipdyGrJaUt9w": {
+					"wins": 120,
+					"kills": 5.96,
+					"deaths": 6.45,
+					"assists": 8.5,
+					"dmgDealt": 24179.91,
+					"dmgTaken": 26967.73,
+					"dmgMitigated": 21014.05,
+					"vision": 19.83,
+					"wardsPlaced": 8.1,
+					"wardsKilled": 1.96,
+					"controlWards": 0.32,
+					"ccTime": 22.53,
+					"timeSpentDead": 214.77,
+					"pings": 15.26,
+					"enemyMissingPings": 1.78,
+					"pentas": 0,
+					"quadras": 1,
+					"firstBloods": 0.13,
+					"firstTowers": 0.06,
+					"towerDmg": 5534.01,
+					"turretTakedowns": 1.99,
+					"objectiveDmg": 10505.54,
+					"dragonTakedowns": 1.18,
+					"baronTakedowns": 0.45,
+					"objectivesStolen": 2,
+					"gold": 12024.49,
+					"cs": 183.7,
+					"healsOnTeammates": 399.3,
+					"shieldsOnTeammates": 318.82,
+					"soloKills": 1.13,
+					"skillshotsDodged": 37.06,
+					"skillshotsHit": 47.27,
+					"surrenders": 0.25,
+					"timePlayed": 1837.53,
+					"largestSpree": 2.71,
+					"outnumberedKills": 214,
+					"killsUnderOwnTurret": 198,
+					"killsNearEnemyTurret": 249,
+					"bombas": 0.5,
+					"saves": 0.02,
+					"buffsStolen": 0.09,
+					"allInPings": 0.01,
+					"assistMePings": 0.18,
+					"basicPings": 0,
+					"commandPings": 5.39,
+					"dangerPings": 0,
+					"enemyVisionPings": 3.22,
+					"getBackPings": 0,
+					"holdPings": 0,
+					"needVisionPings": 0.07,
+					"onMyWayPings": 1.04,
+					"pushPings": 0.01,
+					"retreatPings": 3.55,
+					"visionClearedPings": 0,
+					"bestSpree": 10,
+					"biggestCrit": 1031,
+					"biggestComeback": 22,
+					"biggestCsLead": 111,
+					"games": 222,
+					"winRate": 0.5405,
+					"firstBloodRate": 0.1261,
+					"firstTowerRate": 0.0631,
+					"kda": 2.24,
+					"dmgPerKill": 4054,
+					"totals": {
+						"wins": 120,
+						"kills": 1324,
+						"deaths": 1431,
+						"assists": 1888,
+						"dmgDealt": 5367941,
+						"dmgTaken": 5986837,
+						"dmgMitigated": 4665120,
+						"vision": 4403,
+						"wardsPlaced": 1799,
+						"wardsKilled": 435,
+						"controlWards": 71,
+						"ccTime": 5002,
+						"timeSpentDead": 47680,
+						"pings": 3387,
+						"enemyMissingPings": 396,
+						"pentas": 0,
+						"quadras": 1,
+						"firstBloods": 28,
+						"firstTowers": 14,
+						"towerDmg": 1228550,
+						"turretTakedowns": 442,
+						"objectiveDmg": 2332230,
+						"dragonTakedowns": 262,
+						"baronTakedowns": 99,
+						"objectivesStolen": 2,
+						"gold": 2669436,
+						"cs": 40782,
+						"healsOnTeammates": 88644,
+						"shieldsOnTeammates": 70779,
+						"soloKills": 250,
+						"skillshotsDodged": 8228,
+						"skillshotsHit": 10494,
+						"surrenders": 56,
+						"timePlayed": 407932,
+						"largestSpree": 601,
+						"outnumberedKills": 214,
+						"killsUnderOwnTurret": 198,
+						"killsNearEnemyTurret": 249,
+						"bombas": 112,
+						"saves": 4,
+						"buffsStolen": 21,
+						"allInPings": 3,
+						"assistMePings": 40,
+						"basicPings": 0,
+						"commandPings": 1197,
+						"dangerPings": 0,
+						"enemyVisionPings": 714,
+						"getBackPings": 1,
+						"holdPings": 0,
+						"needVisionPings": 16,
+						"onMyWayPings": 230,
+						"pushPings": 2,
+						"retreatPings": 788,
+						"visionClearedPings": 0
+					},
+					"topChamps": [
+						{
+							"id": "Naafiri",
+							"name": "Naafiri",
+							"games": 58,
+							"wins": 35
+						},
+						{
+							"id": "Mel",
+							"name": "Mel",
+							"games": 28,
+							"wins": 13
+						},
+						{
+							"id": "Senna",
+							"name": "Senna",
+							"games": 16,
+							"wins": 11
+						}
+					],
+					"favItem": {
+						"id": 6655,
+						"name": "Luden's Echo",
+						"games": 40
+					}
+				},
+				"BlwfURffyMhHVN1sDIg8LP_qqKwxsO-PBPMVVIBJHl7nbtsX1WvXJzcAMhP1hLXGVp5TjCwMkZDUcA": {
+					"wins": 107,
+					"kills": 3.28,
+					"deaths": 5.32,
+					"assists": 14.64,
+					"dmgDealt": 12868.24,
+					"dmgTaken": 24679.53,
+					"dmgMitigated": 28320.17,
+					"vision": 80.88,
+					"wardsPlaced": 29.13,
+					"wardsKilled": 8.14,
+					"controlWards": 3.76,
+					"ccTime": 46.93,
+					"timeSpentDead": 144.92,
+					"pings": 17.16,
+					"enemyMissingPings": 1.11,
+					"pentas": 0,
+					"quadras": 0,
+					"firstBloods": 0.26,
+					"firstTowers": 0.16,
+					"towerDmg": 3355.03,
+					"turretTakedowns": 2.36,
+					"objectiveDmg": 4890.07,
+					"dragonTakedowns": 1.47,
+					"baronTakedowns": 0.34,
+					"objectivesStolen": 0,
+					"gold": 9678.59,
+					"cs": 43.33,
+					"healsOnTeammates": 218.06,
+					"shieldsOnTeammates": 2067.63,
+					"soloKills": 0.58,
+					"skillshotsDodged": 44.04,
+					"skillshotsHit": 22.27,
+					"surrenders": 0.23,
+					"timePlayed": 1803.8,
+					"largestSpree": 1.48,
+					"outnumberedKills": 107,
+					"killsUnderOwnTurret": 149,
+					"killsNearEnemyTurret": 136,
+					"bombas": 9.02,
+					"saves": 0.33,
+					"buffsStolen": 0.01,
+					"allInPings": 0.15,
+					"assistMePings": 0.85,
+					"basicPings": 0,
+					"commandPings": 3.32,
+					"dangerPings": 0,
+					"enemyVisionPings": 5.38,
+					"getBackPings": 0.86,
+					"holdPings": 0,
+					"needVisionPings": 0.1,
+					"onMyWayPings": 3.4,
+					"pushPings": 0.14,
+					"retreatPings": 1.85,
+					"visionClearedPings": 0,
+					"bestSpree": 9,
+					"biggestCrit": 664,
+					"biggestComeback": 22,
+					"biggestCsLead": 75.7999999821186,
+					"games": 189,
+					"winRate": 0.5661,
+					"firstBloodRate": 0.2593,
+					"firstTowerRate": 0.1587,
+					"kda": 3.37,
+					"dmgPerKill": 3929,
+					"totals": {
+						"wins": 107,
+						"kills": 619,
+						"deaths": 1005,
+						"assists": 2767,
+						"dmgDealt": 2432097,
+						"dmgTaken": 4664432,
+						"dmgMitigated": 5352513,
+						"vision": 15287,
+						"wardsPlaced": 5505,
+						"wardsKilled": 1539,
+						"controlWards": 710,
+						"ccTime": 8869,
+						"timeSpentDead": 27390,
+						"pings": 3243,
+						"enemyMissingPings": 209,
+						"pentas": 0,
+						"quadras": 0,
+						"firstBloods": 49,
+						"firstTowers": 30,
+						"towerDmg": 634101,
+						"turretTakedowns": 446,
+						"objectiveDmg": 924224,
+						"dragonTakedowns": 278,
+						"baronTakedowns": 65,
+						"objectivesStolen": 0,
+						"gold": 1829254,
+						"cs": 8189,
+						"healsOnTeammates": 41213,
+						"shieldsOnTeammates": 390783,
+						"soloKills": 110,
+						"skillshotsDodged": 8323,
+						"skillshotsHit": 4209,
+						"surrenders": 44,
+						"timePlayed": 340918,
+						"largestSpree": 279,
+						"outnumberedKills": 107,
+						"killsUnderOwnTurret": 149,
+						"killsNearEnemyTurret": 136,
+						"bombas": 1704,
+						"saves": 62,
+						"buffsStolen": 1,
+						"allInPings": 29,
+						"assistMePings": 161,
+						"basicPings": 0,
+						"commandPings": 628,
+						"dangerPings": 0,
+						"enemyVisionPings": 1017,
+						"getBackPings": 162,
+						"holdPings": 0,
+						"needVisionPings": 19,
+						"onMyWayPings": 642,
+						"pushPings": 26,
+						"retreatPings": 350,
+						"visionClearedPings": 0
+					},
+					"topChamps": [
+						{
+							"id": "Thresh",
+							"name": "Thresh",
+							"games": 182,
+							"wins": 106
+						},
+						{
+							"id": "Leona",
+							"name": "Leona",
+							"games": 2,
+							"wins": 0
+						},
+						{
+							"id": "Xerath",
+							"name": "Xerath",
+							"games": 2,
+							"wins": 0
+						}
+					],
+					"favItem": {
+						"id": 3876,
+						"name": "Solstice Sleigh",
+						"games": 179
+					}
+				},
+				"7rjB9FTIaQhmOrhqIxufE2AG7X8K0enJXy3U7msVWB-7xK8OmZcp2kLsAtw9c93mcg51-FF9LYExYA": {
+					"wins": 58,
+					"kills": 4.35,
+					"deaths": 7.64,
+					"assists": 10.12,
+					"dmgDealt": 18449.93,
+					"dmgTaken": 27921.84,
+					"dmgMitigated": 24155.19,
+					"vision": 44.69,
+					"wardsPlaced": 19.39,
+					"wardsKilled": 3.4,
+					"controlWards": 2.78,
+					"ccTime": 29.57,
+					"timeSpentDead": 231.61,
+					"pings": 23.77,
+					"enemyMissingPings": 2.58,
+					"pentas": 0,
+					"quadras": 1,
+					"firstBloods": 0.15,
+					"firstTowers": 0.1,
+					"towerDmg": 4555.49,
+					"turretTakedowns": 1.77,
+					"objectiveDmg": 6764.16,
+					"dragonTakedowns": 0.94,
+					"baronTakedowns": 0.36,
+					"objectivesStolen": 0,
+					"gold": 11178.71,
+					"cs": 119.42,
+					"healsOnTeammates": 173.92,
+					"shieldsOnTeammates": 604.63,
+					"soloKills": 0.83,
+					"skillshotsDodged": 45.81,
+					"skillshotsHit": 37.52,
+					"surrenders": 0.21,
+					"timePlayed": 1862.3,
+					"largestSpree": 1.72,
+					"outnumberedKills": 75,
+					"killsUnderOwnTurret": 86,
+					"killsNearEnemyTurret": 106,
+					"bombas": 1.5,
+					"saves": 0.13,
+					"buffsStolen": 0.01,
+					"allInPings": 0.15,
+					"assistMePings": 0.4,
+					"basicPings": 0,
+					"commandPings": 11.44,
+					"dangerPings": 0,
+					"enemyVisionPings": 0.1,
+					"getBackPings": 0.01,
+					"holdPings": 0,
+					"needVisionPings": 0.36,
+					"onMyWayPings": 6.57,
+					"pushPings": 0.05,
+					"retreatPings": 2.12,
+					"visionClearedPings": 0,
+					"bestSpree": 8,
+					"biggestCrit": 2215,
+					"biggestComeback": 20,
+					"biggestCsLead": 87.7999999821186,
+					"games": 124,
+					"winRate": 0.4677,
+					"firstBloodRate": 0.1532,
+					"firstTowerRate": 0.0968,
+					"kda": 1.9,
+					"dmgPerKill": 4237,
+					"totals": {
+						"wins": 58,
+						"kills": 540,
+						"deaths": 947,
+						"assists": 1255,
+						"dmgDealt": 2287791,
+						"dmgTaken": 3462308,
+						"dmgMitigated": 2995243,
+						"vision": 5541,
+						"wardsPlaced": 2404,
+						"wardsKilled": 421,
+						"controlWards": 345,
+						"ccTime": 3667,
+						"timeSpentDead": 28720,
+						"pings": 2948,
+						"enemyMissingPings": 320,
+						"pentas": 0,
+						"quadras": 1,
+						"firstBloods": 19,
+						"firstTowers": 12,
+						"towerDmg": 564881,
+						"turretTakedowns": 220,
+						"objectiveDmg": 838756,
+						"dragonTakedowns": 117,
+						"baronTakedowns": 45,
+						"objectivesStolen": 0,
+						"gold": 1386160,
+						"cs": 14808,
+						"healsOnTeammates": 21566,
+						"shieldsOnTeammates": 74974,
+						"soloKills": 103,
+						"skillshotsDodged": 5681,
+						"skillshotsHit": 4653,
+						"surrenders": 26,
+						"timePlayed": 230925,
+						"largestSpree": 213,
+						"outnumberedKills": 75,
+						"killsUnderOwnTurret": 86,
+						"killsNearEnemyTurret": 106,
+						"bombas": 186,
+						"saves": 16,
+						"buffsStolen": 1,
+						"allInPings": 19,
+						"assistMePings": 49,
+						"basicPings": 0,
+						"commandPings": 1418,
+						"dangerPings": 0,
+						"enemyVisionPings": 12,
+						"getBackPings": 1,
+						"holdPings": 0,
+						"needVisionPings": 45,
+						"onMyWayPings": 815,
+						"pushPings": 6,
+						"retreatPings": 263,
+						"visionClearedPings": 0
+					},
+					"topChamps": [
+						{
+							"id": "Braum",
+							"name": "Braum",
+							"games": 37,
+							"wins": 19
+						},
+						{
+							"id": "Aphelios",
+							"name": "Aphelios",
+							"games": 32,
+							"wins": 14
+						},
+						{
+							"id": "Gragas",
+							"name": "Gragas",
+							"games": 22,
+							"wins": 9
+						}
+					],
+					"favItem": {
+						"id": 3190,
+						"name": "Locket of the Iron Solari",
+						"games": 40
+					}
+				},
+				"xArCqJH8DsDZgGdwGdCLQlvb9VjS6gng128ag7r-qBVQGx4oWXf36WIWiaqF449ck2TyKBKenIdekw": {
+					"wins": 33,
+					"kills": 6.8,
+					"deaths": 7.96,
+					"assists": 7.51,
+					"dmgDealt": 26426.47,
+					"dmgTaken": 26412.4,
+					"dmgMitigated": 16010.8,
+					"vision": 21.01,
+					"wardsPlaced": 9.67,
+					"wardsKilled": 1.17,
+					"controlWards": 0.07,
+					"ccTime": 35.71,
+					"timeSpentDead": 266.35,
+					"pings": 12.81,
+					"enemyMissingPings": 7.12,
+					"pentas": 0,
+					"quadras": 0,
+					"firstBloods": 0.11,
+					"firstTowers": 0.11,
+					"towerDmg": 6174.93,
+					"turretTakedowns": 1.92,
+					"objectiveDmg": 8421.53,
+					"dragonTakedowns": 0.56,
+					"baronTakedowns": 0.25,
+					"objectivesStolen": 0,
+					"gold": 12635.01,
+					"cs": 181.51,
+					"healsOnTeammates": 40.41,
+					"shieldsOnTeammates": 6.25,
+					"soloKills": 2.44,
+					"skillshotsDodged": 31.33,
+					"skillshotsHit": 51.92,
+					"surrenders": 0.13,
+					"timePlayed": 1875.88,
+					"largestSpree": 2.56,
+					"outnumberedKills": 80,
+					"killsUnderOwnTurret": 73,
+					"killsNearEnemyTurret": 96,
+					"bombas": 6.12,
+					"saves": 0,
+					"buffsStolen": 0.05,
+					"allInPings": 0.09,
+					"assistMePings": 0.07,
+					"basicPings": 0,
+					"commandPings": 2.64,
+					"dangerPings": 0,
+					"enemyVisionPings": 0.36,
+					"getBackPings": 0.03,
+					"holdPings": 0,
+					"needVisionPings": 0.21,
+					"onMyWayPings": 0.64,
+					"pushPings": 0.07,
+					"retreatPings": 1.59,
+					"visionClearedPings": 0,
+					"bestSpree": 11,
+					"biggestCrit": 1005,
+					"biggestComeback": 9,
+					"biggestCsLead": 104.2000000178814,
+					"games": 75,
+					"winRate": 0.44,
+					"firstBloodRate": 0.1067,
+					"firstTowerRate": 0.1067,
+					"kda": 1.8,
+					"dmgPerKill": 3886,
+					"totals": {
+						"wins": 33,
+						"kills": 510,
+						"deaths": 597,
+						"assists": 563,
+						"dmgDealt": 1981985,
+						"dmgTaken": 1980930,
+						"dmgMitigated": 1200810,
+						"vision": 1576,
+						"wardsPlaced": 725,
+						"wardsKilled": 88,
+						"controlWards": 5,
+						"ccTime": 2678,
+						"timeSpentDead": 19976,
+						"pings": 961,
+						"enemyMissingPings": 534,
+						"pentas": 0,
+						"quadras": 0,
+						"firstBloods": 8,
+						"firstTowers": 8,
+						"towerDmg": 463120,
+						"turretTakedowns": 144,
+						"objectiveDmg": 631615,
+						"dragonTakedowns": 42,
+						"baronTakedowns": 19,
+						"objectivesStolen": 0,
+						"gold": 947626,
+						"cs": 13613,
+						"healsOnTeammates": 3031,
+						"shieldsOnTeammates": 469,
+						"soloKills": 183,
+						"skillshotsDodged": 2350,
+						"skillshotsHit": 3894,
+						"surrenders": 10,
+						"timePlayed": 140691,
+						"largestSpree": 192,
+						"outnumberedKills": 80,
+						"killsUnderOwnTurret": 73,
+						"killsNearEnemyTurret": 96,
+						"bombas": 459,
+						"saves": 0,
+						"buffsStolen": 4,
+						"allInPings": 7,
+						"assistMePings": 5,
+						"basicPings": 0,
+						"commandPings": 198,
+						"dangerPings": 0,
+						"enemyVisionPings": 27,
+						"getBackPings": 2,
+						"holdPings": 0,
+						"needVisionPings": 16,
+						"onMyWayPings": 48,
+						"pushPings": 5,
+						"retreatPings": 119,
+						"visionClearedPings": 0
+					},
+					"topChamps": [
+						{
+							"id": "Syndra",
+							"name": "Syndra",
+							"games": 43,
+							"wins": 23
+						},
+						{
+							"id": "Trundle",
+							"name": "Trundle",
+							"games": 5,
+							"wins": 2
+						},
+						{
+							"id": "Yone",
+							"name": "Yone",
+							"games": 4,
+							"wins": 2
+						}
+					],
+					"favItem": {
+						"id": 6655,
+						"name": "Luden's Echo",
+						"games": 45
+					}
+				},
+				"pZ980ziPxy6EQVCKJOUnvqIjoCwg6I5C6idX4oXvZGvg-08bPVKduCOPZy6WZCFgGi2didrmdVZsig": {
+					"wins": 27,
+					"kills": 6.7,
+					"deaths": 5.52,
+					"assists": 8.86,
+					"dmgDealt": 21794.4,
+					"dmgTaken": 33274.24,
+					"dmgMitigated": 23880.16,
+					"vision": 31.46,
+					"wardsPlaced": 8.46,
+					"wardsKilled": 3.4,
+					"controlWards": 1.02,
+					"ccTime": 78.18,
+					"timeSpentDead": 189.48,
+					"pings": 24.86,
+					"enemyMissingPings": 1.32,
+					"pentas": 0,
+					"quadras": 0,
+					"firstBloods": 0.12,
+					"firstTowers": 0.12,
+					"towerDmg": 6201.38,
+					"turretTakedowns": 1.84,
+					"objectiveDmg": 25421.74,
+					"dragonTakedowns": 1.7,
+					"baronTakedowns": 0.68,
+					"objectivesStolen": 7,
+					"gold": 12817.12,
+					"cs": 190.06,
+					"healsOnTeammates": 9.6,
+					"shieldsOnTeammates": 48.72,
+					"soloKills": 1.64,
+					"skillshotsDodged": 25.44,
+					"skillshotsHit": 12.2,
+					"surrenders": 0.1,
+					"timePlayed": 1901.6,
+					"largestSpree": 3.58,
+					"outnumberedKills": 57,
+					"killsUnderOwnTurret": 35,
+					"killsNearEnemyTurret": 46,
+					"bombas": 0.34,
+					"saves": 0,
+					"buffsStolen": 0.44,
+					"allInPings": 0.24,
+					"assistMePings": 0.44,
+					"basicPings": 0,
+					"commandPings": 14.84,
+					"dangerPings": 0,
+					"enemyVisionPings": 0.52,
+					"getBackPings": 0.1,
+					"holdPings": 0,
+					"needVisionPings": 0.36,
+					"onMyWayPings": 3.1,
+					"pushPings": 0.08,
+					"retreatPings": 3.86,
+					"visionClearedPings": 0,
+					"bestSpree": 8,
+					"biggestCrit": 1708,
+					"biggestComeback": 12,
+					"biggestCsLead": 101.80000004172325,
+					"games": 50,
+					"winRate": 0.54,
+					"firstBloodRate": 0.12,
+					"firstTowerRate": 0.12,
+					"kda": 2.82,
+					"dmgPerKill": 3253,
+					"totals": {
+						"wins": 27,
+						"kills": 335,
+						"deaths": 276,
+						"assists": 443,
+						"dmgDealt": 1089720,
+						"dmgTaken": 1663712,
+						"dmgMitigated": 1194008,
+						"vision": 1573,
+						"wardsPlaced": 423,
+						"wardsKilled": 170,
+						"controlWards": 51,
+						"ccTime": 3909,
+						"timeSpentDead": 9474,
+						"pings": 1243,
+						"enemyMissingPings": 66,
+						"pentas": 0,
+						"quadras": 0,
+						"firstBloods": 6,
+						"firstTowers": 6,
+						"towerDmg": 310069,
+						"turretTakedowns": 92,
+						"objectiveDmg": 1271087,
+						"dragonTakedowns": 85,
+						"baronTakedowns": 34,
+						"objectivesStolen": 7,
+						"gold": 640856,
+						"cs": 9503,
+						"healsOnTeammates": 480,
+						"shieldsOnTeammates": 2436,
+						"soloKills": 82,
+						"skillshotsDodged": 1272,
+						"skillshotsHit": 610,
+						"surrenders": 5,
+						"timePlayed": 95080,
+						"largestSpree": 179,
+						"outnumberedKills": 57,
+						"killsUnderOwnTurret": 35,
+						"killsNearEnemyTurret": 46,
+						"bombas": 17,
+						"saves": 0,
+						"buffsStolen": 22,
+						"allInPings": 12,
+						"assistMePings": 22,
+						"basicPings": 0,
+						"commandPings": 742,
+						"dangerPings": 0,
+						"enemyVisionPings": 26,
+						"getBackPings": 5,
+						"holdPings": 0,
+						"needVisionPings": 18,
+						"onMyWayPings": 155,
+						"pushPings": 4,
+						"retreatPings": 193,
+						"visionClearedPings": 0
+					},
+					"topChamps": [
+						{
+							"id": "Nocturne",
+							"name": "Nocturne",
+							"games": 18,
+							"wins": 8
+						},
+						{
+							"id": "Yorick",
+							"name": "Yorick",
+							"games": 11,
+							"wins": 8
+						},
+						{
+							"id": "Shaco",
+							"name": "Shaco",
+							"games": 10,
+							"wins": 5
+						}
+					],
+					"favItem": {
+						"id": 6631,
+						"name": "Stridebreaker",
+						"games": 18
+					}
+				},
+				"j18Con6HhLAONSGm0X_utXK-eBPGpq3OW_2pN4QEk6bCwQHZufEv5WgZUF6NRtzuiYrmsC4G1LPFVA": {
+					"wins": 103,
+					"kills": 8.14,
+					"deaths": 4.72,
+					"assists": 7.6,
+					"dmgDealt": 29137.91,
+					"dmgTaken": 21507.89,
+					"dmgMitigated": 14198.04,
+					"vision": 25.41,
+					"wardsPlaced": 13.14,
+					"wardsKilled": 1.74,
+					"controlWards": 0.01,
+					"ccTime": 15.94,
+					"timeSpentDead": 148.01,
+					"pings": 19.93,
+					"enemyMissingPings": 2.13,
+					"pentas": 0,
+					"quadras": 6,
+					"firstBloods": 0.14,
+					"firstTowers": 0.22,
+					"towerDmg": 8784.79,
+					"turretTakedowns": 2.82,
+					"objectiveDmg": 17114.18,
+					"dragonTakedowns": 1.3,
+					"baronTakedowns": 0.55,
+					"objectivesStolen": 3,
+					"gold": 15137.58,
+					"cs": 224.94,
+					"healsOnTeammates": 7.55,
+					"shieldsOnTeammates": 39.83,
+					"soloKills": 0.99,
+					"skillshotsDodged": 32.63,
+					"skillshotsHit": 46.3,
+					"surrenders": 0.17,
+					"timePlayed": 1853.46,
+					"largestSpree": 4.32,
+					"outnumberedKills": 218,
+					"killsUnderOwnTurret": 197,
+					"killsNearEnemyTurret": 353,
+					"bombas": 0.39,
+					"saves": 0.01,
+					"buffsStolen": 0.15,
+					"allInPings": 0.32,
+					"assistMePings": 1.32,
+					"basicPings": 0,
+					"commandPings": 5.09,
+					"dangerPings": 0,
+					"enemyVisionPings": 1.19,
+					"getBackPings": 2.25,
+					"holdPings": 0,
+					"needVisionPings": 0.19,
+					"onMyWayPings": 7.31,
+					"pushPings": 0.15,
+					"retreatPings": 0.01,
+					"visionClearedPings": 0,
+					"bestSpree": 17,
+					"biggestCrit": 2900,
+					"biggestComeback": 20,
+					"biggestCsLead": 149.89999994635582,
+					"games": 199,
+					"winRate": 0.5176,
+					"firstBloodRate": 0.1407,
+					"firstTowerRate": 0.2211,
+					"kda": 3.33,
+					"dmgPerKill": 3581,
+					"totals": {
+						"wins": 103,
+						"kills": 1619,
+						"deaths": 940,
+						"assists": 1513,
+						"dmgDealt": 5798444,
+						"dmgTaken": 4280071,
+						"dmgMitigated": 2825410,
+						"vision": 5056,
+						"wardsPlaced": 2615,
+						"wardsKilled": 346,
+						"controlWards": 1,
+						"ccTime": 3172,
+						"timeSpentDead": 29454,
+						"pings": 3967,
+						"enemyMissingPings": 424,
+						"pentas": 0,
+						"quadras": 6,
+						"firstBloods": 28,
+						"firstTowers": 44,
+						"towerDmg": 1748173,
+						"turretTakedowns": 562,
+						"objectiveDmg": 3405721,
+						"dragonTakedowns": 259,
+						"baronTakedowns": 109,
+						"objectivesStolen": 3,
+						"gold": 3012378,
+						"cs": 44764,
+						"healsOnTeammates": 1502,
+						"shieldsOnTeammates": 7926,
+						"soloKills": 198,
+						"skillshotsDodged": 6494,
+						"skillshotsHit": 9214,
+						"surrenders": 33,
+						"timePlayed": 368838,
+						"largestSpree": 860,
+						"outnumberedKills": 218,
+						"killsUnderOwnTurret": 197,
+						"killsNearEnemyTurret": 353,
+						"bombas": 78,
+						"saves": 1,
+						"buffsStolen": 30,
+						"allInPings": 63,
+						"assistMePings": 263,
+						"basicPings": 0,
+						"commandPings": 1012,
+						"dangerPings": 0,
+						"enemyVisionPings": 237,
+						"getBackPings": 447,
+						"holdPings": 0,
+						"needVisionPings": 37,
+						"onMyWayPings": 1454,
+						"pushPings": 29,
+						"retreatPings": 1,
+						"visionClearedPings": 0
+					},
+					"topChamps": [
+						{
+							"id": "Caitlyn",
+							"name": "Caitlyn",
+							"games": 56,
+							"wins": 34
+						},
+						{
+							"id": "Sivir",
+							"name": "Sivir",
+							"games": 40,
+							"wins": 23
+						},
+						{
+							"id": "Jinx",
+							"name": "Jinx",
+							"games": 25,
+							"wins": 14
+						}
+					],
+					"favItem": {
+						"id": 3031,
+						"name": "Infinity Edge",
+						"games": 123
+					}
+				}
+			},
+			"duos": [
+				{
+					"players": [
+						"MCOgFGVwvNZ6BTd-rDcoqx8jPbX3WiSKBTcAPtXcrPaWUn8y3x5VgaYodalbewBVQJl1g2TdD09PEA",
+						"pZ980ziPxy6EQVCKJOUnvqIjoCwg6I5C6idX4oXvZGvg-08bPVKduCOPZy6WZCFgGi2didrmdVZsig"
+					],
+					"games": 13,
+					"wins": 8,
+					"winRate": 0.6154
+				},
+				{
+					"players": [
+						"j18Con6HhLAONSGm0X_utXK-eBPGpq3OW_2pN4QEk6bCwQHZufEv5WgZUF6NRtzuiYrmsC4G1LPFVA",
+						"pZ980ziPxy6EQVCKJOUnvqIjoCwg6I5C6idX4oXvZGvg-08bPVKduCOPZy6WZCFgGi2didrmdVZsig"
+					],
+					"games": 13,
+					"wins": 8,
+					"winRate": 0.6154
+				},
+				{
+					"players": [
+						"KajmIyrgDSjqpXdLfCYrebhWAsLYo27D-AbXuQHDh61ikKEF7orupgWTsrILJ0yUJ9ipdyGrJaUt9w",
+						"MCOgFGVwvNZ6BTd-rDcoqx8jPbX3WiSKBTcAPtXcrPaWUn8y3x5VgaYodalbewBVQJl1g2TdD09PEA"
+					],
+					"games": 139,
+					"wins": 80,
+					"winRate": 0.5755
+				},
+				{
+					"players": [
+						"BlwfURffyMhHVN1sDIg8LP_qqKwxsO-PBPMVVIBJHl7nbtsX1WvXJzcAMhP1hLXGVp5TjCwMkZDUcA",
+						"pZ980ziPxy6EQVCKJOUnvqIjoCwg6I5C6idX4oXvZGvg-08bPVKduCOPZy6WZCFgGi2didrmdVZsig"
+					],
+					"games": 9,
+					"wins": 5,
+					"winRate": 0.5556
+				},
+				{
+					"players": [
+						"j18Con6HhLAONSGm0X_utXK-eBPGpq3OW_2pN4QEk6bCwQHZufEv5WgZUF6NRtzuiYrmsC4G1LPFVA",
+						"xArCqJH8DsDZgGdwGdCLQlvb9VjS6gng128ag7r-qBVQGx4oWXf36WIWiaqF449ck2TyKBKenIdekw"
+					],
+					"games": 11,
+					"wins": 6,
+					"winRate": 0.5455
+				},
+				{
+					"players": [
+						"MCOgFGVwvNZ6BTd-rDcoqx8jPbX3WiSKBTcAPtXcrPaWUn8y3x5VgaYodalbewBVQJl1g2TdD09PEA",
+						"j18Con6HhLAONSGm0X_utXK-eBPGpq3OW_2pN4QEk6bCwQHZufEv5WgZUF6NRtzuiYrmsC4G1LPFVA"
+					],
+					"games": 52,
+					"wins": 28,
+					"winRate": 0.5385
+				},
+				{
+					"players": [
+						"MCOgFGVwvNZ6BTd-rDcoqx8jPbX3WiSKBTcAPtXcrPaWUn8y3x5VgaYodalbewBVQJl1g2TdD09PEA",
+						"ZIVXS0EZYmuR-KyEoY8dri41ZsfP7HDacAAIDR2w7GEtXywQJPODEaDlKIp4QRf1mNHbc25d3ntx0w"
+					],
+					"games": 276,
+					"wins": 148,
+					"winRate": 0.5362
+				},
+				{
+					"players": [
+						"7rjB9FTIaQhmOrhqIxufE2AG7X8K0enJXy3U7msVWB-7xK8OmZcp2kLsAtw9c93mcg51-FF9LYExYA",
+						"MCOgFGVwvNZ6BTd-rDcoqx8jPbX3WiSKBTcAPtXcrPaWUn8y3x5VgaYodalbewBVQJl1g2TdD09PEA"
+					],
+					"games": 19,
+					"wins": 10,
+					"winRate": 0.5263
+				},
+				{
+					"players": [
+						"BlwfURffyMhHVN1sDIg8LP_qqKwxsO-PBPMVVIBJHl7nbtsX1WvXJzcAMhP1hLXGVp5TjCwMkZDUcA",
+						"KajmIyrgDSjqpXdLfCYrebhWAsLYo27D-AbXuQHDh61ikKEF7orupgWTsrILJ0yUJ9ipdyGrJaUt9w"
+					],
+					"games": 135,
+					"wins": 71,
+					"winRate": 0.5259
+				},
+				{
+					"players": [
+						"BlwfURffyMhHVN1sDIg8LP_qqKwxsO-PBPMVVIBJHl7nbtsX1WvXJzcAMhP1hLXGVp5TjCwMkZDUcA",
+						"MCOgFGVwvNZ6BTd-rDcoqx8jPbX3WiSKBTcAPtXcrPaWUn8y3x5VgaYodalbewBVQJl1g2TdD09PEA"
+					],
+					"games": 107,
+					"wins": 56,
+					"winRate": 0.5234
+				},
+				{
+					"players": [
+						"KajmIyrgDSjqpXdLfCYrebhWAsLYo27D-AbXuQHDh61ikKEF7orupgWTsrILJ0yUJ9ipdyGrJaUt9w",
+						"ZIVXS0EZYmuR-KyEoY8dri41ZsfP7HDacAAIDR2w7GEtXywQJPODEaDlKIp4QRf1mNHbc25d3ntx0w"
+					],
+					"games": 132,
+					"wins": 67,
+					"winRate": 0.5076
+				},
+				{
+					"players": [
+						"7rjB9FTIaQhmOrhqIxufE2AG7X8K0enJXy3U7msVWB-7xK8OmZcp2kLsAtw9c93mcg51-FF9LYExYA",
+						"j18Con6HhLAONSGm0X_utXK-eBPGpq3OW_2pN4QEk6bCwQHZufEv5WgZUF6NRtzuiYrmsC4G1LPFVA"
+					],
+					"games": 58,
+					"wins": 29,
+					"winRate": 0.5
+				},
+				{
+					"players": [
+						"BlwfURffyMhHVN1sDIg8LP_qqKwxsO-PBPMVVIBJHl7nbtsX1WvXJzcAMhP1hLXGVp5TjCwMkZDUcA",
+						"ZIVXS0EZYmuR-KyEoY8dri41ZsfP7HDacAAIDR2w7GEtXywQJPODEaDlKIp4QRf1mNHbc25d3ntx0w"
+					],
+					"games": 107,
+					"wins": 53,
+					"winRate": 0.4953
+				},
+				{
+					"players": [
+						"ZIVXS0EZYmuR-KyEoY8dri41ZsfP7HDacAAIDR2w7GEtXywQJPODEaDlKIp4QRf1mNHbc25d3ntx0w",
+						"j18Con6HhLAONSGm0X_utXK-eBPGpq3OW_2pN4QEk6bCwQHZufEv5WgZUF6NRtzuiYrmsC4G1LPFVA"
+					],
+					"games": 85,
+					"wins": 42,
+					"winRate": 0.4941
+				},
+				{
+					"players": [
+						"BlwfURffyMhHVN1sDIg8LP_qqKwxsO-PBPMVVIBJHl7nbtsX1WvXJzcAMhP1hLXGVp5TjCwMkZDUcA",
+						"j18Con6HhLAONSGm0X_utXK-eBPGpq3OW_2pN4QEk6bCwQHZufEv5WgZUF6NRtzuiYrmsC4G1LPFVA"
+					],
+					"games": 54,
+					"wins": 24,
+					"winRate": 0.4444
+				},
+				{
+					"players": [
+						"ZIVXS0EZYmuR-KyEoY8dri41ZsfP7HDacAAIDR2w7GEtXywQJPODEaDlKIp4QRf1mNHbc25d3ntx0w",
+						"pZ980ziPxy6EQVCKJOUnvqIjoCwg6I5C6idX4oXvZGvg-08bPVKduCOPZy6WZCFgGi2didrmdVZsig"
+					],
+					"games": 18,
+					"wins": 8,
+					"winRate": 0.4444
+				},
+				{
+					"players": [
+						"KajmIyrgDSjqpXdLfCYrebhWAsLYo27D-AbXuQHDh61ikKEF7orupgWTsrILJ0yUJ9ipdyGrJaUt9w",
+						"xArCqJH8DsDZgGdwGdCLQlvb9VjS6gng128ag7r-qBVQGx4oWXf36WIWiaqF449ck2TyKBKenIdekw"
+					],
+					"games": 14,
+					"wins": 6,
+					"winRate": 0.4286
+				},
+				{
+					"players": [
+						"BlwfURffyMhHVN1sDIg8LP_qqKwxsO-PBPMVVIBJHl7nbtsX1WvXJzcAMhP1hLXGVp5TjCwMkZDUcA",
+						"xArCqJH8DsDZgGdwGdCLQlvb9VjS6gng128ag7r-qBVQGx4oWXf36WIWiaqF449ck2TyKBKenIdekw"
+					],
+					"games": 14,
+					"wins": 6,
+					"winRate": 0.4286
+				},
+				{
+					"players": [
+						"KajmIyrgDSjqpXdLfCYrebhWAsLYo27D-AbXuQHDh61ikKEF7orupgWTsrILJ0yUJ9ipdyGrJaUt9w",
+						"j18Con6HhLAONSGm0X_utXK-eBPGpq3OW_2pN4QEk6bCwQHZufEv5WgZUF6NRtzuiYrmsC4G1LPFVA"
+					],
+					"games": 52,
+					"wins": 22,
+					"winRate": 0.4231
+				},
+				{
+					"players": [
+						"7rjB9FTIaQhmOrhqIxufE2AG7X8K0enJXy3U7msVWB-7xK8OmZcp2kLsAtw9c93mcg51-FF9LYExYA",
+						"BlwfURffyMhHVN1sDIg8LP_qqKwxsO-PBPMVVIBJHl7nbtsX1WvXJzcAMhP1hLXGVp5TjCwMkZDUcA"
+					],
+					"games": 17,
+					"wins": 7,
+					"winRate": 0.4118
+				},
+				{
+					"players": [
+						"KajmIyrgDSjqpXdLfCYrebhWAsLYo27D-AbXuQHDh61ikKEF7orupgWTsrILJ0yUJ9ipdyGrJaUt9w",
+						"pZ980ziPxy6EQVCKJOUnvqIjoCwg6I5C6idX4oXvZGvg-08bPVKduCOPZy6WZCFgGi2didrmdVZsig"
+					],
+					"games": 13,
+					"wins": 5,
+					"winRate": 0.3846
+				},
+				{
+					"players": [
+						"7rjB9FTIaQhmOrhqIxufE2AG7X8K0enJXy3U7msVWB-7xK8OmZcp2kLsAtw9c93mcg51-FF9LYExYA",
+						"KajmIyrgDSjqpXdLfCYrebhWAsLYo27D-AbXuQHDh61ikKEF7orupgWTsrILJ0yUJ9ipdyGrJaUt9w"
+					],
+					"games": 19,
+					"wins": 7,
+					"winRate": 0.3684
+				},
+				{
+					"players": [
+						"7rjB9FTIaQhmOrhqIxufE2AG7X8K0enJXy3U7msVWB-7xK8OmZcp2kLsAtw9c93mcg51-FF9LYExYA",
+						"ZIVXS0EZYmuR-KyEoY8dri41ZsfP7HDacAAIDR2w7GEtXywQJPODEaDlKIp4QRf1mNHbc25d3ntx0w"
+					],
+					"games": 26,
+					"wins": 8,
+					"winRate": 0.3077
+				},
+				{
+					"players": [
+						"MCOgFGVwvNZ6BTd-rDcoqx8jPbX3WiSKBTcAPtXcrPaWUn8y3x5VgaYodalbewBVQJl1g2TdD09PEA",
+						"xArCqJH8DsDZgGdwGdCLQlvb9VjS6gng128ag7r-qBVQGx4oWXf36WIWiaqF449ck2TyKBKenIdekw"
+					],
+					"games": 8,
+					"wins": 2,
+					"winRate": 0.25
+				},
+				{
+					"players": [
+						"ZIVXS0EZYmuR-KyEoY8dri41ZsfP7HDacAAIDR2w7GEtXywQJPODEaDlKIp4QRf1mNHbc25d3ntx0w",
+						"xArCqJH8DsDZgGdwGdCLQlvb9VjS6gng128ag7r-qBVQGx4oWXf36WIWiaqF449ck2TyKBKenIdekw"
+					],
+					"games": 6,
+					"wins": 1,
+					"winRate": 0.1667
+				}
+			],
+			"squadTeams": {
+				"2": {
+					"games": 279,
+					"wins": 167
+				},
+				"3": {
+					"games": 91,
+					"wins": 47
+				},
+				"4": {
+					"games": 67,
+					"wins": 37
+				},
+				"5": {
+					"games": 45,
+					"wins": 18
+				}
+			},
+			"squadGames": {
+				"MCOgFGVwvNZ6BTd-rDcoqx8jPbX3WiSKBTcAPtXcrPaWUn8y3x5VgaYodalbewBVQJl1g2TdD09PEA": {
+					"2": {
+						"games": 178,
+						"wins": 103
+					},
+					"3": {
+						"games": 71,
+						"wins": 38
+					},
+					"4": {
+						"games": 58,
+						"wins": 31
+					},
+					"5": {
+						"games": 30,
+						"wins": 15
+					}
+				},
+				"ZIVXS0EZYmuR-KyEoY8dri41ZsfP7HDacAAIDR2w7GEtXywQJPODEaDlKIp4QRf1mNHbc25d3ntx0w": {
+					"2": {
+						"games": 171,
+						"wins": 94
+					},
+					"3": {
+						"games": 73,
+						"wins": 38
+					},
+					"4": {
+						"games": 55,
+						"wins": 31
+					},
+					"5": {
+						"games": 42,
+						"wins": 16
+					}
+				},
+				"KajmIyrgDSjqpXdLfCYrebhWAsLYo27D-AbXuQHDh61ikKEF7orupgWTsrILJ0yUJ9ipdyGrJaUt9w": {
+					"2": {
+						"games": 44,
+						"wins": 31
+					},
+					"3": {
+						"games": 51,
+						"wins": 28
+					},
+					"4": {
+						"games": 66,
+						"wins": 37
+					},
+					"5": {
+						"games": 40,
+						"wins": 15
+					}
+				},
+				"BlwfURffyMhHVN1sDIg8LP_qqKwxsO-PBPMVVIBJHl7nbtsX1WvXJzcAMhP1hLXGVp5TjCwMkZDUcA": {
+					"2": {
+						"games": 53,
+						"wins": 38
+					},
+					"3": {
+						"games": 28,
+						"wins": 14
+					},
+					"4": {
+						"games": 58,
+						"wins": 32
+					},
+					"5": {
+						"games": 40,
+						"wins": 15
+					}
+				},
+				"7rjB9FTIaQhmOrhqIxufE2AG7X8K0enJXy3U7msVWB-7xK8OmZcp2kLsAtw9c93mcg51-FF9LYExYA": {
+					"2": {
+						"games": 31,
+						"wins": 18
+					},
+					"3": {
+						"games": 13,
+						"wins": 6
+					},
+					"4": {
+						"games": 4,
+						"wins": 2
+					},
+					"5": {
+						"games": 19,
+						"wins": 7
+					}
+				},
+				"xArCqJH8DsDZgGdwGdCLQlvb9VjS6gng128ag7r-qBVQGx4oWXf36WIWiaqF449ck2TyKBKenIdekw": {
+					"2": {
+						"games": 1,
+						"wins": 1
+					},
+					"3": {
+						"games": 2,
+						"wins": 1
+					},
+					"4": {
+						"games": 12,
+						"wins": 5
+					},
+					"5": {
+						"games": 4,
+						"wins": 1
+					}
+				},
+				"pZ980ziPxy6EQVCKJOUnvqIjoCwg6I5C6idX4oXvZGvg-08bPVKduCOPZy6WZCFgGi2didrmdVZsig": {
+					"2": {
+						"games": 17,
+						"wins": 10
+					},
+					"3": {
+						"games": 2,
+						"wins": 0
+					},
+					"4": {
+						"games": 3,
+						"wins": 2
+					},
+					"5": {
+						"games": 10,
+						"wins": 5
+					}
+				},
+				"j18Con6HhLAONSGm0X_utXK-eBPGpq3OW_2pN4QEk6bCwQHZufEv5WgZUF6NRtzuiYrmsC4G1LPFVA": {
+					"2": {
+						"games": 63,
+						"wins": 39
+					},
+					"3": {
+						"games": 33,
+						"wins": 16
+					},
+					"4": {
+						"games": 12,
+						"wins": 8
+					},
+					"5": {
+						"games": 40,
+						"wins": 16
+					}
+				}
+			},
+			"groupChamps": [
+				{
+					"id": "Volibear",
+					"name": "Volibear",
+					"games": 251,
+					"wins": 146
+				},
+				{
+					"id": "Thresh",
+					"name": "Thresh",
+					"games": 184,
+					"wins": 108
+				},
+				{
+					"id": "Gragas",
+					"name": "Gragas",
+					"games": 162,
+					"wins": 79
+				},
+				{
+					"id": "Gangplank",
+					"name": "Gangplank",
+					"games": 150,
+					"wins": 81
+				},
+				{
+					"id": "Naafiri",
+					"name": "Naafiri",
+					"games": 60,
+					"wins": 37
+				}
+			]
+		},
+		"mayhem": {
+			"label": "ARAM: Mayhem",
+			"map": 12,
+			"totalGames": 0,
+			"stats": {},
+			"duos": [],
+			"squadTeams": {},
+			"squadGames": {},
+			"groupChamps": []
+		}
+	}
+}

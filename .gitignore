@@ -10,15 +10,12 @@
 !.yarn/releases
 !.yarn/versions
 
-# data
-/entire.json
-/players.full.json
-/
 # testing
 /coverage
 
 # next.js
 /.next/
+/.next-check/
 /out/
 
 # production
@@ -44,10 +41,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Dynamic/debug data files (players.json and players.full.json ARE needed
-# at build time - lib/categories.js imports players.full.json directly)
-/data/entire.json
-/data/stats.json
-/data/players.withPuuids.json
-/data/inspect-*.json
-/recent-match.json
+# Riot API cache (data/site.json IS committed - the app imports it at build time)
+/data/cache/

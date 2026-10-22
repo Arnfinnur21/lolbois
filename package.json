@@ -8,17 +8,13 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
-		"gen-players": "node -r dotenv/config scripts/buildPlayers.js",
-		"gen-recent-match": "node -r dotenv/config scripts/getRecentMatch.js"
+		"gen-data": "node scripts/buildData.js",
+		"gen-players": "node scripts/buildData.js"
 	},
 	"dependencies": {
-		"@emotion/react": "^11.14.0",
-		"@emotion/styled": "^11.14.1",
-		"@mui/material": "^7.3.1",
 		"dotenv": "^17.2.0",
 		"framer-motion": "^12.23.12",
 		"next": "15.4.3",
-		"node-fetch": "^2.7.0",
 		"react": "19.1.0",
 		"react-dom": "19.1.0"
 	},
