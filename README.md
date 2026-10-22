@@ -2,7 +2,14 @@
 
 A Next.js stat-tracking site for a group of League of Legends players. It pulls every game the squad has played this season from the Riot Games API, splits them by mode and ranks everyone on per-game stats.
 
-![lolbois-stats screenshot](public/LOLBOIS_README.png)
+![The squad and season overview](docs/screenshots/hero.jpg)
+
+| | |
+|---|---|
+| ![A category: Killers, with the leader in a crosshair frame](docs/screenshots/category.jpg) | ![Paired categories: Gold Diff and Farm Diff](docs/screenshots/paired.jpg) |
+| ![The Records wall](docs/screenshots/records.jpg) | ![Ping Spammers, with a per-player ping breakdown](docs/screenshots/pings.jpg) |
+
+The stats are split into chapters (Fighting, Damage & Survival, Map & Money, Records, The Squad), each category with its own frame shape, colour and particle effect.
 
 ## Categories
 
