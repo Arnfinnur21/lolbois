@@ -1,3 +1,6 @@
+// Shows up in the deploy's build log, to check the host passed it through
+console.log(`MAINTENANCE_MODE: ${JSON.stringify(process.env.MAINTENANCE_MODE ?? "(not set)")}`);
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	// Lets a check build (NEXT_DIST_DIR=.next-check npx next build) write elsewhere,

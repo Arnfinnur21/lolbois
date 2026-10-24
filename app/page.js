@@ -4,8 +4,11 @@ import Leaderboard from "@/components/Leaderboard";
 import UnderConstruction from "@/components/UnderConstruction";
 import { formatDate } from "@/lib/utils";
 
+// Forgiving about how the host stores it: True, "true", 1, yes, on
+const maintenance = /^["']?(true|1|yes|on)["']?$/i.test(process.env.MAINTENANCE_MODE?.trim() ?? "");
+
 export default function HomePage() {
-	if (process.env.MAINTENANCE_MODE === "true") return <UnderConstruction />;
+	if (maintenance) return <UnderConstruction />;
 
 	return (
 		<main>
