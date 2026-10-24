@@ -1,9 +1,12 @@
 import site from "@/data/site.json";
 import Hero from "@/components/Hero";
 import Leaderboard from "@/components/Leaderboard";
+import UnderConstruction from "@/components/UnderConstruction";
 import { formatDate } from "@/lib/utils";
 
 export default function HomePage() {
+	if (process.env.MAINTENANCE_MODE === "true") return <UnderConstruction />;
+
 	return (
 		<main>
 			<Hero site={site} />
