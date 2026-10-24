@@ -18,7 +18,10 @@ function rosterByGames(site, modes) {
 		.sort((a, b) => b.games - a.games);
 }
 
-export default function Hero({ site }) {
+// Season end dates are exclusive, so a past season's last day is the one before
+const lastDay = (iso) => new Date(new Date(iso).getTime() - 24 * 60 * 60 * 1000).toISOString();
+
+export default function Hero({ site, seasonSwitch }) {
 	const modes = activeModeKeys(site).map((key) => site.modes[key]);
 	const totalGames = modes.reduce((n, m) => n + m.totalGames, 0);
 	const roster = rosterByGames(site, modes);
@@ -51,11 +54,15 @@ export default function Hero({ site }) {
 				</figure>
 
 				<div>
-					<p className="title-display text-xl md:text-2xl">The season of the</p>
+					{seasonSwitch && <div className="mb-8">{seasonSwitch}</div>}
+					<p className="title-display text-xl md:text-2xl">The {site.season} season of the</p>
 					<h1 className="title-display mt-3 text-7xl lg:text-8xl">Lolbois</h1>
 					<p className="mt-6 max-w-md text-base leading-relaxed text-gold-pale/90">
-						Every game the squad has played since {formatDate(site.seasonStart)}, crunched into who carries,
-						who ints and who just pings.
+						Every game the squad{" "}
+						{site.current
+							? `has played since ${formatDate(site.seasonStart)}`
+							: `played from ${formatDate(site.seasonStart)} to ${formatDate(lastDay(site.seasonEnd))}`}
+						, crunched into who carries, who ints and who just pings.
 					</p>
 					<a
 						href="#stats"

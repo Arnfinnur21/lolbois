@@ -1,4 +1,4 @@
-import { Inter, Merriweather } from "next/font/google";
+import { IM_Fell_English, Inter, Merriweather } from "next/font/google";
 import "./globals.css";
 import MotionProvider from "@/components/MotionProvider";
 
@@ -12,6 +12,14 @@ const displaySerif = Merriweather({
 	subsets: ["latin"],
 	weight: ["900"],
 	style: ["italic"],
+});
+
+// Old print face for The Verdict's lore, in the spirit of Darkest Dungeon
+const fell = IM_Fell_English({
+	variable: "--font-fell",
+	subsets: ["latin"],
+	weight: "400",
+	style: ["normal", "italic"],
 });
 
 export const metadata = {
@@ -30,7 +38,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
-			<body className={`${inter.variable} ${displaySerif.variable} font-sans antialiased`}>
+			<body className={`${inter.variable} ${displaySerif.variable} ${fell.variable} font-sans antialiased`}>
 				<MotionProvider>{children}</MotionProvider>
 			</body>
 		</html>

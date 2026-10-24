@@ -1,0 +1,51 @@
+{
+	"_howTo": "The Verdict panel for each player, keyed by in-game name: an accent colour, a Darkest Dungeon class, and a lore paragraph. The background is the default splash art of the champion in data/portraits.json (or their most played). \"focus\" is the CSS object-position for that splash, if the champion sits off-centre. No rebuild needed after editing.",
+	"Nubblys": {
+		"accent": "#22e4ff",
+		"class": "Highwayman",
+		"focus": "62% 30%",
+		"lore": "A corsair washed up on the top lane, salt still crusted on the coat and an orange in the fist. Nubblys does not fight beside the squad so much as near it, and on terms of their own choosing: the lane is won, the turret is pried open like a rotten keg, and by the time the team gathers for battle the plunder is already two lanes away. When the pirate's luck runs dry, the barrel-bellied brewer rolls in to finish the work. Gold flows to this one as the tide flows to shore, and seldom flows back. Losing streaks are weathered like squalls: one more drink, one more queue, and never a word of regret."
+	},
+	"Uncle": {
+		"accent": "#3dff6e",
+		"class": "Abomination",
+		"focus": "60% 25%",
+		"lore": "From the frozen dark beyond the treeline comes the thunder-bear, and it is always, always on its way. Uncle stalks the river like a famished thing: drakes fall, barons are torn from enemy hands, and the smite lands before the rival jungler has finished reaching for theirs. Every blow the enemy can muster breaks against a hide of iron and storm. Wards are an afterthought; dragons are not. And long after midnight, when the Flame burns low and wiser souls have sought their beds, the storm still rolls across the Rift."
+	},
+	"Agusto": {
+		"accent": "#f4f6ff",
+		"class": "Arbalest",
+		"focus": "50% 25%",
+		"lore": "A marksman of cold and patient cruelty, the sheriff's rifle never far from hand. Agusto stands at the back of every battle and counts the dead, and the tally is always in their favour: more kills than anyone in the squad, fewer deaths than anyone in the squad, and quadra kills strung along the mantel like trophies. The enemy front line is an inconvenience; the enemy carry, an appointment. But a weapon this precious keeps its own company. Control wards are a superstition of the frightened, and the retreat ping is a thing of myth."
+	},
+	"The Hooker": {
+		"accent": "#ffd60a",
+		"class": "Bounty Hunter",
+		"focus": "55% 25%",
+		"lore": "The Chain Warden walks the bottom lane with a lantern in one hand and a hook in the other, collecting souls as a miser collects coin. Where the Hooker's chain lands, death follows: rarely the Warden's own kill, nearly always the Warden's doing. No one in the squad sees more of the map, shields more of the wounded, or drags more of the enemy screaming into the light. The lantern has pulled ally after ally back from Death's Door, and been thanked by none of them. Nearly every game is Thresh. The rest are clerical errors."
+	},
+	"Fats": {
+		"accent": "#b97474",
+		"class": "Houndmaster",
+		"focus": "55% 30%",
+		"lore": "A restless hound of the mid lane, never long at any one master's heel. Fats has worn more faces than a travelling mummer: the snarling pack of Naafiri, the gilded hand of Mel, the mist-wreathed rifle of Senna, and a menagerie besides. The lane is a tithe paid slowly to the enemy, but the skirmishes that follow are another matter, for the hound's aim is true and its bite finds the throat. There is mercy in this one too, healing and shielding that no mid laner has any business providing. Alone, a stray. In the right pack, a thing to be feared."
+	},
+	"Smoochy": {
+		"accent": "#ff8a1a",
+		"class": "Runaway",
+		"focus": "50% 25%",
+		"lore": "A soul at war with the bottom lane, never certain whether to carry the weapons or the shield. One night it is the five moonlit guns of Aphelios; the next, the great door of Braum, hoisted for some ungrateful ally. Smoochy dodges like a thing possessed, slipping skillshot after skillshot by a hair's breadth, then strolls into the next with arms flung wide. Stress accumulates; the queue button is pressed regardless. Marathon days are not a schedule but a penance, and yet when the clock strikes midnight, the candle is snuffed. Discipline, of a kind."
+	},
+	"Vago": {
+		"accent": "#b45cff",
+		"class": "Occultist",
+		"focus": "60% 25%",
+		"lore": "A sovereign of dark spheres, who demands the mid lane and the attention of all within it. When Vago's orbs find their mark, and they find it more often than anyone's, the enemy is scattered like chaff before the storm. But power of this sort is jealous and lonely. Battles are joined late or not at all, the grey screen is a frequent companion, and the enemy's absence is proclaimed to the team with prophetic regularity. Wards are for those who fear the dark. This one walks in it gladly, and is devoured by it often."
+	},
+	"Equinix": {
+		"accent": "#ff2a2a",
+		"class": "Grave Robber",
+		"focus": "50% 25%",
+		"lore": "A thing of the umbral hours, appearing in the squad's games with all the regularity of an eclipse. When the lights go out, Equinix is already upon the enemy carry; when the prey tries to flee, it finds it cannot move. Few in the squad hold a foe in place so long, or so often. Between hauntings, this shade has raised the drowned dead on Yorick's shores and played the jester's tricks of Shaco, and none of it was ever seen coming. Seldom present, never quite forgotten."
+	}
+}

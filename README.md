@@ -1,6 +1,6 @@
 # lolbois-stats
 
-A Next.js stat-tracking site for a group of League of Legends players. It pulls every game the squad has played this season from the Riot Games API, splits them by mode and ranks everyone on per-game stats.
+A Next.js stat-tracking site for a group of League of Legends players. It pulls every game the squad has played from the Riot Games API, splits them by season and mode and ranks everyone on per-game stats. A switch at the top flips between seasons (2025 and 2026).
 
 ![The squad and season overview](docs/screenshots/hero.jpg)
 
@@ -9,7 +9,7 @@ A Next.js stat-tracking site for a group of League of Legends players. It pulls 
 | ![A category: Killers, with the leader in a crosshair frame](docs/screenshots/category.jpg) | ![Paired categories: Gold Diff and Farm Diff](docs/screenshots/paired.jpg) |
 | ![The Records wall](docs/screenshots/records.jpg) | ![Ping Spammers, with a per-player ping breakdown](docs/screenshots/pings.jpg) |
 
-The stats are split into chapters (Fighting, Damage & Survival, Map & Money, Records, The Squad), each category with its own frame shape, colour and particle effect.
+The stats are split into chapters (Fighting, Damage & Survival, Map & Money, Records, The Squad, The Verdict), each category with its own frame shape, colour and particle effect.
 
 ## Categories
 
@@ -25,12 +25,15 @@ Each mode (Summoner's Rift, ARAM: Mayhem) gets its own leaderboards. Per-game st
 - **Grey Screen Enjoyers**: time spent dead per game
 - **Mental Warfare**: CC inflicted per game
 - **Vision Andies**: vision score per game (Summoner's Rift only)
+- **Demolition Crew**: tower damage per game, with turret plates underneath
+- **Split Pushers**: towers taken alone late in the game, per game (Summoner's Rift only)
 - **Ping Spammers**: pings per game
 - **Penta Machines**: pentakills this season (quadras break ties)
 - **First Blood Hunters**: first blood involvement
 - **The Anchor**: how much the squad's win rate drops with a player on the team, compared with the same size stack without them (duos win far more than 5-stacks, so sizes are compared separately)
 - **Duos**: win rate for every pair of the squad on the same team
 - **The Squad**: each player's mains and favourite item
+- **The Verdict**: a full-screen panel per player over their main's splash art, washed in their own colour, crossfading into the next as you scroll. Each has a title from their most extreme trait in [`lib/profiles.js`](lib/profiles.js) (no two players share one), a Darkest Dungeon class and lore paragraph from [`data/verdicts.json`](data/verdicts.json), pros and cons as quirks ([`lib/quirks.js`](lib/quirks.js), scored against the squad median), who they win most with (win rate together pulled toward their own win rate by 50 games, so volume counts), and personal records with the champion and result they were set on
 
 Category definitions live in [`lib/aggregate.js`](lib/aggregate.js) (`SUMS`, every stat summed per player), [`lib/utils.js`](lib/utils.js) (`STAT_DESCRIPTORS`) and [`lib/categories.js`](lib/categories.js).
 
@@ -63,7 +66,7 @@ npm run gen-data -- --offline    # rebuild data/site.json from the cache only, n
 ```
 
 - `data/players.json` is the roster of Riot IDs.
-- Match ids are listed per player and queue since `SEASON_START`, then de-duplicated, so a game several of the squad played together is downloaded once.
+- Match ids are listed per player, queue and season (`SEASONS`), then de-duplicated, so a game several of the squad played together is downloaded once. A finished season is only listed once.
 - Matches are trimmed and cached in `data/cache/` (gitignored). Later runs only download new games. If a run dies or the key expires, nothing already fetched is lost.
 - Requests go through a rate limiter that follows the key's own limits (20/s and 100 per 2 min on a dev key) and backs off on 429s. A first full-season run takes about 15–30 minutes on a dev key.
 
@@ -72,7 +75,8 @@ npm run gen-data -- --offline    # rebuild data/site.json from the cache only, n
 - **Portraits**: [`data/portraits.json`](data/portraits.json) sets the champion and skins (by name, as in the client) shown for each player. Two skins crossfade. Run `npm run gen-data -- --offline` after editing.
 - **Player**: add `{ "gameName": "...", "tagLine": "..." }` to `data/players.json` and run `npm run gen-data`.
 - **Mode**: modes with no games this season are hidden automatically. Add an entry to `MODES` in [`lib/modes.js`](lib/modes.js) with its queue ids from [queues.json](https://static.developer.riotgames.com/docs/lol/queues.json). Plain ARAM (queue 450) is there, commented out.
-- `SEASON_START`, `MIN_GAMES` and `MIN_DUO_GAMES` live in the same file.
+- **Season**: add its start date to `SEASONS` in the same file. Each season ends where the next one starts, and the newest is the default on the site.
+- `MIN_GAMES` and `MIN_DUO_GAMES` live in the same file.
 
 ## Tech stack
 

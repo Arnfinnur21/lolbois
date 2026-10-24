@@ -1,5 +1,5 @@
 // scripts/buildData.js
-// Fetches every roster match this season (cached + de-duplicated) and writes data/site.json.
+// Fetches every roster match in each season (cached + de-duplicated) and writes data/site.json.
 //   npm run gen-data              fetch new matches, then aggregate
 //   npm run gen-data -- --offline aggregate from the cache only (no Riot API calls)
 import fs from "fs";
@@ -23,13 +23,19 @@ import {
 } from "../lib/matchCache.js";
 import { getLatestVersion, getChampions, getItems, getChampionSkins } from "../lib/ddragon.js";
 import { aggregate } from "../lib/aggregate.js";
-import { MODES, SEASON_START, MIN_GAMES, MIN_DUO_GAMES } from "../lib/modes.js";
+import { MODES, SEASONS, MIN_GAMES, MIN_DUO_GAMES } from "../lib/modes.js";
 
 const OFFLINE = process.argv.includes("--offline");
 const CONCURRENCY = 4;
 const ID_OVERLAP_SECS = 2 * 24 * 60 * 60; // re-list a little before the last run to be safe
 
-const seasonStartSecs = Math.floor(new Date(SEASON_START).getTime() / 1000);
+// [{ year, start, end }], oldest first; end is the next season's start (null for the current one)
+const seasonList = Object.entries(SEASONS).map(([year, { start }], i, all) => ({
+	year,
+	start,
+	end: all[i + 1]?.[1].start ?? null,
+}));
+const toSecs = (date) => Math.floor(new Date(date).getTime() / 1000);
 const allQueues = [...new Set(Object.values(MODES).flatMap((m) => m.queues))];
 const fmtMins = (ms) => `${Math.floor(ms / 60000)}m ${Math.round((ms % 60000) / 1000)}s`;
 
@@ -93,29 +99,36 @@ async function collectMatchIds(players) {
 	const ids = new Set();
 
 	for (const player of players) {
+		const counts = Object.fromEntries(seasonList.map((season) => [season.year, 0]));
 		for (const queue of allQueues) {
-			// Keyed by Riot ID, since PUUIDs change with the API key
-			const cacheKey = `${player.riotId}:${queue}`;
-			const legacyKey = [player.puuid, ...(player.aliases ?? [])]
-				.map((puuid) => `${puuid}:${queue}`)
-				.find((key) => idCache[key]);
-			let entry = idCache[cacheKey] ?? idCache[legacyKey];
-			if (legacyKey) delete idCache[legacyKey];
-			if (entry?.seasonStart !== SEASON_START) entry = { seasonStart: SEASON_START, ids: [] };
+			// Older caches had one season per key, by Riot ID or (before that) by PUUID
+			const legacyKeys = [player.riotId, player.puuid, ...(player.aliases ?? [])].map((key) => `${key}:${queue}`);
+			const legacy = legacyKeys.map((key) => idCache[key]).filter(Boolean);
+			legacyKeys.forEach((key) => delete idCache[key]);
 
-			if (!OFFLINE) {
-				const since = entry.fetchedAt
-					? Math.max(seasonStartSecs, entry.fetchedAt - ID_OVERLAP_SECS)
-					: seasonStartSecs;
-				const fetchedAt = Math.floor(Date.now() / 1000);
-				const fresh = await getAllMatchIds(player.puuid, queue, since);
-				entry = { ...entry, fetchedAt, ids: [...new Set([...fresh, ...entry.ids])] };
+			for (const season of seasonList) {
+				// Keyed by Riot ID, since PUUIDs change with the API key
+				const cacheKey = `${season.year}:${player.riotId}:${queue}`;
+				let entry = idCache[cacheKey] ?? legacy.find((e) => e.seasonStart === season.start);
+				if (entry?.seasonStart !== season.start) entry = { seasonStart: season.start, ids: [] };
+
+				// A finished season only needs listing once after it ends
+				const finished = season.end && entry.fetchedAt >= toSecs(season.end);
+				if (!OFFLINE && !finished) {
+					const startSecs = toSecs(season.start);
+					const since = entry.fetchedAt ? Math.max(startSecs, entry.fetchedAt - ID_OVERLAP_SECS) : startSecs;
+					const fetchedAt = Math.floor(Date.now() / 1000);
+					const until = season.end ? toSecs(season.end) : undefined;
+					const fresh = await getAllMatchIds(player.puuid, queue, since, until);
+					entry = { ...entry, fetchedAt, ids: [...new Set([...fresh, ...entry.ids])] };
+				}
+				idCache[cacheKey] = entry;
+				counts[season.year] += entry.ids.length;
+				entry.ids.forEach((id) => ids.add(id));
 			}
-			idCache[cacheKey] = entry;
-			entry.ids.forEach((id) => ids.add(id));
 		}
-		const count = allQueues.reduce((n, q) => n + (idCache[`${player.riotId}:${q}`]?.ids.length ?? 0), 0);
-		console.log(`📋 ${player.name}: ${count} games this season`);
+		const summary = Object.entries(counts).map(([year, n]) => `${n} in ${year}`).join(", ");
+		console.log(`📋 ${player.name}: ${summary}`);
 	}
 
 	writeCacheJson("ids.json", idCache);
@@ -230,23 +243,31 @@ async function main() {
 
 	const ddragon = await loadDDragon();
 	const portraits = await resolvePortraits(players, ddragon);
-	const result = aggregate({
-		matches: normalisePuuids(
-			[...cached.values()].filter((m) => ids.has(m.id)),
-			players
-		),
-		roster: players,
-		modes: MODES,
-		champions: ddragon.champions,
-		items: ddragon.items,
-		seasonStart: SEASON_START,
-		minGames: MIN_GAMES,
-		minDuoGames: MIN_DUO_GAMES,
-	});
+	const matches = normalisePuuids(
+		[...cached.values()].filter((m) => ids.has(m.id)),
+		players
+	);
+	const seasons = Object.fromEntries(
+		seasonList.map((season) => [
+			season.year,
+			aggregate({
+				matches,
+				roster: players,
+				modes: MODES,
+				champions: ddragon.champions,
+				items: ddragon.items,
+				seasonStart: season.start,
+				seasonEnd: season.end,
+				minDuoGames: MIN_DUO_GAMES,
+			}),
+		])
+	);
 
 	const site = {
 		generatedAt: new Date().toISOString(),
 		ddragonVersion: ddragon.version,
+		minGames: MIN_GAMES,
+		minDuoGames: MIN_DUO_GAMES,
 		players: players.map(({ puuid, name, tag, iconId, level }) => ({
 			puuid,
 			name,
@@ -255,12 +276,15 @@ async function main() {
 			level,
 			...(portraits[puuid] && { portrait: portraits[puuid] }),
 		})),
-		...result,
+		currentSeason: seasonList.at(-1).year,
+		seasons,
 	};
 	const out = path.resolve("data/site.json");
 	fs.writeFileSync(out, JSON.stringify(site, null, "\t"), "utf-8");
 
-	const summary = Object.values(site.modes).map((m) => `${m.label}: ${m.totalGames}`).join(", ");
+	const summary = Object.entries(seasons)
+		.map(([year, { modes }]) => `${year}: ${Object.values(modes).map((m) => `${m.label} ${m.totalGames}`).join(", ")}`)
+		.join(" · ");
 	console.log(`\n🏁 Wrote ${out} (${summary}) in ${fmtMins(Date.now() - started)}`);
 }
 

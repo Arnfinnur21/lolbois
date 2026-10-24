@@ -35,22 +35,18 @@ const SHAPES = {
 	diamond: {
 		path: "M50 0 L100 50 L50 100 L0 50 Z",
 		artInset: "7%",
-		from: { rotate: -12, scale: 0.82 },
 	},
 	circle: {
 		path: "M50 0 A50 50 0 1 1 50 100 A50 50 0 1 1 50 0 Z",
 		artInset: "6%",
-		from: { rotate: 0, scale: 0.9 },
 	},
 	blast: {
 		path: radialPath(24, (i) => (i % 2 ? 31 : BLAST_SPIKES[i / 2])),
 		artInset: "6%",
-		from: { rotate: -25, scale: 0.6 },
 	},
 	shield: {
 		path: "M50 2 Q72 10 94 10 L94 42 Q94 78 50 98 Q6 78 6 42 L6 10 Q28 10 50 2 Z",
 		artInset: "7%",
-		from: { rotate: 0, scale: 0.85 },
 	},
 	skull: {
 		// Cranium and jaw, with eye sockets and nose cut out (evenodd)
@@ -61,12 +57,10 @@ const SHAPES = {
 			"M50 62 L44 75 L56 75 Z",
 		evenOdd: true,
 		artInset: "6%",
-		from: { rotate: -8, scale: 0.85 },
 	},
 	wave: {
 		path: radialPath(144, (_, a) => 44 + 4 * Math.sin(a * 6) + 2.5 * Math.sin(a * 11 + 1)),
 		artInset: "7%",
-		from: { rotate: 20, scale: 0.85 },
 		// A faint second outline, knocked slightly out of line
 		echo: { rotate: 9, scale: 1.05 },
 	},
@@ -75,13 +69,11 @@ const SHAPES = {
 		path: radialPath(160, (_, a) => 46 - 9 * Math.exp(-((offAxis(a) / 0.13) ** 2))),
 		decor: "M50 -6 L50 12 M50 88 L50 106 M-6 50 L12 50 M88 50 L106 50",
 		artInset: "6%",
-		from: { rotate: 45, scale: 0.8 },
 	},
 	drops: {
 		// One big drop filling the frame, two small ones up either side at different heights
 		path: `${dropPath(5, 4, 0.9)} ${dropPath(6, 18, 0.3)} ${dropPath(64, 28, 0.3)}`,
 		artInset: "4%",
-		from: { rotate: 0, scale: 0.85 },
 	},
 	wings: {
 		// Tall, wide wings; the halo is outline-only so it doesn't cut into the art
@@ -90,7 +82,6 @@ const SHAPES = {
 			"Q62 86 66 74 Q78 72 76 60 Q88 56 84 44 Q94 40 90 28 Q98 24 104 6 C84 2 62 10 50 28 Z",
 		decor: "M34 9 A16 5 0 1 0 66 9 A16 5 0 1 0 34 9 Z M20 18 Q28 28 28 40 M80 18 Q72 28 72 40",
 		artInset: "4%",
-		from: { rotate: 0, scale: 0.7 },
 	},
 	speed: {
 		// A ball rushing right, trailing three streaks
@@ -100,35 +91,37 @@ const SHAPES = {
 			"M2 47 L20 47 Q23 47 23 50 Q23 53 20 53 L2 53 Q-1 53 -1 50 Q-1 47 2 47 Z " +
 			"M8 64 L24 64 Q27 64 27 67 Q27 70 24 70 L8 70 Q5 70 5 67 Q5 64 8 64 Z",
 		artInset: "5%",
-		from: { rotate: 0, scale: 0.9, x: "-12%" },
 	},
 	book: {
 		// Open book, pages curving up from the spine
 		path: "M50 22 C38 12 18 12 4 18 L4 82 C18 76 38 76 50 86 C62 76 82 76 96 82 L96 18 C82 12 62 12 50 22 Z",
 		decor: "M50 22 L50 86 M12 30 C22 27 34 27 42 32 M12 42 C22 39 34 39 42 44 M58 32 C66 27 78 27 88 30 M58 44 C66 39 78 39 88 42",
 		artInset: "5%",
-		from: { rotate: -6, scale: 0.85 },
 	},
 	bag: {
 		// Money bag tied at the neck
 		path: "M38 4 L62 4 L57 22 C80 28 94 52 92 72 C90 92 72 98 50 98 C28 98 10 92 8 72 C6 52 20 28 43 22 Z",
 		decor: "M36 25 Q50 32 64 25 M44 22 Q38 14 32 16 M56 22 Q62 14 68 16",
 		artInset: "6%",
-		from: { rotate: -10, scale: 0.85 },
 	},
 	trophy: {
 		// Cup, stem and base; handles are outline-only
 		path: "M22 6 L78 6 L78 30 C78 52 66 62 56 64 L56 76 L70 76 L72 94 L28 94 L30 76 L44 76 L44 64 C34 62 22 52 22 30 Z",
 		decor: "M22 14 C4 14 4 44 26 46 M78 14 C96 14 96 44 74 46",
 		artInset: "6%",
-		from: { rotate: 0, scale: 0.8 },
 	},
 	coins: {
 		// A circle raised to leave room for the coin piles drawn underneath
 		path: "M50 2 A36 36 0 1 1 50 74 A36 36 0 1 1 50 2 Z",
 		artInset: "4%",
 		ornament: "coins",
-		from: { rotate: 0, scale: 0.9 },
+	},
+	tower: {
+		// Turret: battlements on top, a column, and a flared base
+		path:
+			"M14 4 L28 4 L28 13 L43 13 L43 4 L57 4 L57 13 L72 13 L72 4 L86 4 L86 30 L74 40 " +
+			"L74 82 L88 90 L88 98 L12 98 L12 90 L26 82 L26 40 L14 30 Z",
+		artInset: "5%",
 	},
 	anchor: {
 		// Kept chunky so the art still reads; all parts wound the same way so overlaps stay filled
@@ -138,9 +131,41 @@ const SHAPES = {
 			"M39 20 L61 20 L61 84 L39 84 Z " +
 			"M2 56 L20 44 L23 58 C29 72 38 77 50 78 C62 77 71 72 77 58 L80 44 L98 56 C92 80 74 99 50 99 C26 99 8 80 2 56 Z",
 		artInset: "4%",
-		from: { rotate: -15, scale: 0.85 },
 	},
 };
+
+// Outlines draw on from each path's start to its end. A dash animation would break under
+// non-scaling-stroke, so the line is revealed by a mask: the same path, stroked thicker,
+// growing along its length. It waits DRAW_DELAY seconds so the art leads.
+const DRAW_DELAY = 0.5;
+const DRAW = {
+	hidden: { pathLength: 0, opacity: 0 },
+	shown: (delay) => ({
+		pathLength: 1,
+		opacity: 1,
+		// Sharp ease-out: most of the line rushes on in the first ~0.8s, then the end creeps closed
+		transition: { pathLength: { duration: 2.6, ease: [0.1, 1, 0.25, 1], delay }, opacity: { duration: 0.01, delay } },
+	}),
+};
+
+function DrawMask({ id, paths, delay }) {
+	return (
+		<mask id={id} maskUnits="userSpaceOnUse" x="-20" y="-20" width="140" height="140">
+			{paths.filter(Boolean).map((d) => (
+				<motion.path
+					key={d}
+					d={d}
+					fill="none"
+					stroke="white"
+					strokeWidth="4"
+					strokeLinecap="round"
+					variants={DRAW}
+					custom={delay}
+				/>
+			))}
+		</mask>
+	);
+}
 
 // How long each skin shows before fading to the other
 const SKIN_SWAP_SECONDS = 7;
@@ -277,17 +302,23 @@ export default function ShapeFrame({
 				<div className="absolute inset-0 bg-gradient-to-t from-abyss/60 via-transparent to-transparent" />
 			</motion.div>
 			{s.echo && (
-				<svg
+				<motion.svg
 					viewBox="0 0 100 100"
 					className={`pointer-events-none absolute inset-0 h-full w-full overflow-visible opacity-35 ${accent ? "" : "text-gold"}`}
 					fill="none"
 					stroke="currentColor"
 					strokeWidth="1"
 					aria-hidden
-					style={{ ...outlineColor, rotate: `${s.echo.rotate}deg`, scale: s.echo.scale }}
+					style={{ ...outlineColor, rotate: s.echo.rotate, scale: s.echo.scale }}
+					initial="hidden"
+					whileInView="shown"
+					viewport={{ once: true, amount: 0.3 }}
 				>
-					<path d={s.path} vectorEffect="non-scaling-stroke" />
-				</svg>
+					<defs>
+						<DrawMask id={`${clipId}-echo-draw`} paths={[s.path]} delay={delay + DRAW_DELAY + 0.2} />
+					</defs>
+					<path d={s.path} vectorEffect="non-scaling-stroke" mask={`url(#${clipId}-echo-draw)`} />
+				</motion.svg>
 			)}
 			<motion.svg
 				viewBox="0 0 100 100"
@@ -298,10 +329,9 @@ export default function ShapeFrame({
 				strokeLinecap="round"
 				aria-hidden
 				style={outlineColor}
-				initial={{ opacity: 0, ...s.from }}
-				whileInView={{ opacity: 1, rotate: 0, scale: 1, x: 0 }}
+				initial="hidden"
+				whileInView="shown"
 				viewport={{ once: true, amount: 0.3 }}
-				transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: delay + 0.15 }}
 			>
 				{/* The shape filled black masks out everything inside it, so overlapping parts
 				    (anchor ring, bar and shank) merge into one silhouette. The stroke is doubled
@@ -311,9 +341,12 @@ export default function ShapeFrame({
 						<rect x="-20" y="-20" width="140" height="140" fill="white" />
 						<path d={s.path} fill="black" fillRule={fillRule} />
 					</mask>
+					<DrawMask id={`${clipId}-draw`} paths={[s.path, s.decor]} delay={delay + DRAW_DELAY} />
 				</defs>
-				<path d={s.path} vectorEffect="non-scaling-stroke" strokeWidth="2" mask={`url(#${clipId}-outline)`} />
-				{s.decor && <path d={s.decor} vectorEffect="non-scaling-stroke" opacity="0.7" />}
+				<g mask={`url(#${clipId}-draw)`}>
+					<path d={s.path} vectorEffect="non-scaling-stroke" strokeWidth="2" mask={`url(#${clipId}-outline)`} />
+					{s.decor && <path d={s.decor} vectorEffect="non-scaling-stroke" opacity="0.7" />}
+				</g>
 			</motion.svg>
 			{s.ornament === "coins" && <CoinPiles id={clipId} delay={delay} />}
 			{effect && <ShapeEffect kind={effect} color={accent} layer="front" />}

@@ -10,6 +10,7 @@ import { ChapterFooter, ChapterHeader, ChapterTabs } from "./Chapters";
 import PingSection from "./PingSection";
 import DuoSection from "./DuoSection";
 import PlayerRoster from "./PlayerRoster";
+import ProfileSection from "./ProfileSection";
 import { CHAPTERS, activeModeKeys, buildCategories, layoutCategories, pickCategories } from "@/lib/categories";
 
 // Non-category sections a chapter can end with, and their legend labels
@@ -17,6 +18,7 @@ const EXTRAS = {
 	pings: { label: "Ping Spammers", Component: PingSection },
 	duos: { label: "Duos", Component: DuoSection },
 	squad: { label: "Squad", Component: PlayerRoster },
+	profiles: { label: "Profiles", Component: ProfileSection },
 };
 
 const setUrlParam = (key, value) => {
@@ -25,7 +27,7 @@ const setUrlParam = (key, value) => {
 	window.history.replaceState(null, "", url);
 };
 
-export default function Leaderboard({ site }) {
+export default function Leaderboard({ site, seasonSwitch }) {
 	const modeKeys = activeModeKeys(site);
 	const [mode, setMode] = useState(modeKeys[0]);
 	const [chapterKey, setChapterKey] = useState(CHAPTERS[0].key);
@@ -92,10 +94,13 @@ export default function Leaderboard({ site }) {
 			<nav className="sticky top-0 z-40 border-y border-gold/15 bg-abyss/85 backdrop-blur">
 				<ProgressLine />
 				<div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 pt-3">
-					<a href="#top" className="title-display text-lg">
-						Lolbois
-					</a>
-					<div className="flex gap-1">
+					<div className="flex items-center gap-3">
+						<a href="#top" className="title-display text-lg">
+							Lolbois
+						</a>
+						{seasonSwitch}
+					</div>
+					<div className="flex flex-wrap justify-end gap-1">
 						{modeKeys.map((key) => (
 							<button
 								key={key}
@@ -121,7 +126,8 @@ export default function Leaderboard({ site }) {
 					Nobody has {site.minGames}+ games in {site.modes[mode].label} yet.
 				</p>
 			) : (
-				<AnimatePresence mode="wait" initial={false}>
+				// No initial={false}: it would pass down and skip every entrance animation in the first chapter
+				<AnimatePresence mode="wait">
 					<motion.div
 						key={`${mode}-${chapter.key}`}
 						initial={{ opacity: 0, y: 16 }}

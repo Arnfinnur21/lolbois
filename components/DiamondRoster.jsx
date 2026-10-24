@@ -37,7 +37,7 @@ export default function DiamondRoster({ items, className = "" }) {
 									translate: `0 ${(i - (PER_ROW - 1) / 2) * STEP}%`,
 								}}
 							>
-								<ShapeFrame shape="diamond" src={item.src} alt={item.alt} delay={(r * PER_ROW + i) * 0.06} />
+								<ShapeFrame shape="diamond" src={item.src} alt={item.alt} delay={(r * PER_ROW + i) * 0.15} />
 								<span className="absolute left-1/2 top-[87.5%] z-10 w-1/4 -translate-x-1/2 -translate-y-1/2">
 									{item.badge}
 								</span>

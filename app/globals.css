@@ -50,6 +50,11 @@ body {
 	font-size: 0.8rem;
 	font-weight: 600;
 }
+
+/* The Verdict's lore and quirk names */
+.font-fell {
+	font-family: var(--font-fell), Georgia, serif;
+}
 }
 
 /* Shape effects (components/ShapeEffect.jsx). Each layer is a size container,

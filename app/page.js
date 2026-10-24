@@ -1,6 +1,5 @@
 import site from "@/data/site.json";
-import Hero from "@/components/Hero";
-import Leaderboard from "@/components/Leaderboard";
+import Seasons from "@/components/Seasons";
 import UnderConstruction from "@/components/UnderConstruction";
 import { formatDate } from "@/lib/utils";
 
@@ -12,8 +11,7 @@ export default function HomePage() {
 
 	return (
 		<main>
-			<Hero site={site} />
-			<Leaderboard site={site} />
+			<Seasons site={site} />
 			<footer className="border-t border-gold/15 px-6 py-10 text-center text-xs text-muted">
 				<p>Updated {formatDate(site.generatedAt)} · Data from the Riot Games API</p>
 				<p className="mt-2 opacity-70">
